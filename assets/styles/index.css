@@ -18,7 +18,7 @@ html{overflow: hidden}
 .focus-picture-buttons{ padding-right: 5px;}
 .focus-picture-buttons a{ float:left; vertical-align: middle; margin: 12px 2px;  display:block; border-radius:2px; height: 6px; width: 13px; background: #ccc; text-indent: -9999em;}
 .focus-picture-buttons a.on{background: #fff;}
-.layout-content{ padding: 0; overflow: hidden; overflow-y: auto;}
+.layout-content{ padding: 0; }
 .news-list-box{ border: 1px solid #ddd; padding: 0 5px 5px 0; margin:5px;}
 .news-content h2, .news-content p {font-size: 12px; margin: 5px 0;}
 .news-content h2{ word-break: keep-all;}

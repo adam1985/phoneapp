@@ -1,12 +1,9 @@
 define(['jquery', 'jquery.mobile',  'touchslider'], function($, mobile, TouchSlider){
 
-    //$(function(){
+        var touchSlider;
 
-        $(document).on('pageshow', function(){
-
-
-
-            new TouchSlider('focus-picture-box',{
+        $(function(){
+            touchSlider = new TouchSlider('focus-picture-box',{
                 auto: true,
                 speed: 300,
                 timeout: 3000,
@@ -15,16 +12,21 @@ define(['jquery', 'jquery.mobile',  'touchslider'], function($, mobile, TouchSli
                     $('#focus-picture-titles').find('a').removeClass('on').eq( index ).addClass('on');
                 }
             });
+        });
+
+        $(document).on( "pageinit", function( event ) {
+            if( touchSlider ) {
+                touchSlider.play();
+            }
+        } );
+
+        $(document).on('pageshow', function(){
 
             var layoutHeader = $('.layout-header:visible'),
                 layoutContent = $('.layout-content:visible'),
                 layoutFooter = $('.layout-footer:visible'),
                 contentHeight = document.documentElement.clientHeight - layoutHeader.height() - layoutFooter.height();
             layoutContent.height( contentHeight );
-
-        //});
-
-
     });
 
 });
