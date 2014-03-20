@@ -2,7 +2,17 @@ define(['jquery', 'jquery.mobile',  'component/touchslider', 'component/touchScr
     './initializeScroll', 'component/superMarquee'],
     function($, mobile, TouchSlider, TouchScroll, initializeScroll){
 
-        var touchSlider;
+        var touchSlider, touchScroll;
+
+        $(function(){
+            // 品牌露出无缝滚动
+            $('.layout-banner').superMarquee({
+                isEqual: true,
+                distance: 25,
+                time: 10,
+                direction: 'up'
+            });
+        });
 
         $(document).on('pageshow', function() {
 
@@ -17,34 +27,19 @@ define(['jquery', 'jquery.mobile',  'component/touchslider', 'component/touchScr
                 }
             });
 
-            //设置滚动条
-            var touchScroll = initializeScroll($, TouchScroll);
 
-            $(window).on('orientationchange, resize',function(){
+            //设置滚动条
+            var setTouchScroll = function() {
                 if( touchScroll ) {
                     touchScroll.destroy();
                 }
                 touchScroll = initializeScroll($, TouchScroll);
-            });
+            };
 
-            if( touchScroll )  {
-                $(touchScroll.container).on('scrollstart', function(){
-                    touchScroll.vbar.show();
-                });
+            setTouchScroll();
 
-                $(touchScroll.container).on('scrollstop', function(){
-                    touchScroll.vbar.show();
-                });
-            }
-
-
-            // 品牌露出无缝滚动
-            $('.layout-banner').superMarquee({
-                isEqual: true,
-                distance: 25,
-                time: 10,
-                direction: 'up'
-            });
+            $(window).on('orientationchange, resize', setTouchScroll);
         });
+
 
 });
