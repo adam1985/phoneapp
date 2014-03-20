@@ -3,8 +3,7 @@
     "paths": {
         "jquery": "jquery/jquery",
         "jquery.mobile": "mobile/jquery.mobile",
-        "jquery.touchslider": "component/jquery.touchslider",
-        "touchslider": "component/touchslider"
+        "jquery.touchslider": "component/jquery.touchslider"
     },
     "shim": {
         //"touchslider": ["jquery", "jquery.mobile"]

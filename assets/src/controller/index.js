@@ -3,12 +3,8 @@ require.config({
     paths: {
         'jquery': 'jquery/jquery',
         'jquery.mobile' : 'mobile/jquery.mobile',
-        'jquery.touchslider' : 'component/jquery.touchslider',
-        'touchslider' : 'component/touchslider'
-    },
-    shim: {
-       // 'touchslider': ['jquery', 'jquery.mobile']
+        'jquery.touchslider' : 'component/jquery.touchslider'
     }
 });
 
-require(['controller/init']);
+require(['controller/initialize']);
