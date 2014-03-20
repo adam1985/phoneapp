@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0;">
+<link rel="stylesheet" href="assets/styles/mobile/my-custom-theme.css" />
+<link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.icons-1.4.2.css" />
+<link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.structure-1.4.2.css" />
+<link rel="stylesheet" href="assets/styles/index.css" />
+</head>
+<body>
+<div data-role="page" id="main-page">
+    <div data-icon="home" data-role="header" data-position="fixed" class="ui-icon-bars layout-header">
+        <h1>火热战报</h1>
+    </div>
+
+    <div role="main" class="ui-content layout-content">
+        <div class="page-width banner">
+            banner显示区
+        </div>
+        <div class="page-width focus-picture" id="focus-picture">
+            <div class="focus-picture-box" id="focus-picture-box">
+                <div class="focus-picture-list">
+                    <a href="#article-page">
+                        <img src="img/1.jpg" />
+                    </a>
+                </div>
+                <div class="focus-picture-list">
+                    <a href="#article-page">
+                        <img src="img/2.jpg" />
+                    </a>
+                </div>
+                <div class="focus-picture-list">
+                    <a href="#article-page">
+                        <img src="img/3.jpg" />
+                    </a>
+                </div>
+                <div class="focus-picture-list">
+                    <a href="#article-page">
+                        <img src="img/4.jpg" />
+                    </a>
+                </div>
+                <div class="focus-picture-list">
+                    <a href="#article-page">
+                        <img src="img/5.jpg" />
+                    </a>
+                </div>
+                <div class="focus-picture-list">
+                    <a href="#article-page">
+                        <img src="img/6.jpg" />
+                    </a>
+                </div>
+            </div>
+            <div class="cl focus-picture-control">
+                <div class="fl focus-picture-titles" id="focus-picture-titles">
+                    <a href="#article-page" class="on">25场15球！本泽马134秒破门1</a>
+                    <a href="#article-page">25场15球！本泽马134秒破门2</a>
+                    <a href="#article-page">25场15球！本泽马134秒破门3</a>
+                    <a href="#article-page">25场15球！本泽马134秒破门4</a>
+                    <a href="#article-page">25场15球！本泽马134秒破门5</a>
+                    <a href="#article-page">25场15球！本泽马134秒破门6</a>
+                </div>
+                <div class="fr focus-picture-buttons" id="focus-picture-buttons">
+                    <a class="on" href="javascript:void(null)">1</a>
+                    <a href="javascript:void(null)">2</a>
+                    <a href="javascript:void(null)">3</a>
+                    <a href="javascript:void(null)">4</a>
+                    <a href="javascript:void(null)">5</a>
+                    <a href="javascript:void(null)">6</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-list-box">
+            <div class="ui-grid-a">
+                <div class="ui-block-a thumb-box">
+                    <a href="#article-page" class="thumb" data-transition="slide">
+                        <img src="img/list1.jpg" width="130" height="70" />
+                    </a>
+                    <a class="category" href="#list-page">最新赛况</a>
+                </div>
+                <div class="ui-block-b news-content">
+                    <a href="#article-page"><h2>25场15泽马134秒破门</h2></a>
+                    <p>
+                        25场15球！秒破门马134秒破门马134秒破门...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-list-box">
+            <div class="ui-grid-a">
+                <div class="ui-block-a thumb-box">
+                    <a href="#article-page" class="thumb">
+                        <img src="img/list2.jpg" width="130" height="70" />
+                    </a>
+                    <a class="category" href="#list-page">精彩进球</a>
+                </div>
+                <div class="ui-block-b news-content">
+                    <a href="#article-page"><h2>25场15泽马134秒破门</h2></a>
+                    <p>
+                        25场15球！秒破门马134秒破门马134秒破门...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-list-box">
+            <div class="ui-grid-a">
+                <div class="ui-block-a thumb-box">
+                    <a class="category" href="#list-page">足球花边</a>
+                </div>
+                <div class="ui-block-b news-content">
+                    <a href="#article-page"><h2>25场15泽马134秒破门</h2></a>
+                </div>
+            </div>
+            <div class="news-content news-description">
+                <p>
+                    25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门
+                </p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div data-role="footer" data-position="fixed" class="layout-footer">
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li><a href="#" data-icon="gear">百万竞猜</a></li>
+                <li><a href="#" data-icon="grid">今日赛事</a></li>
+                <li><a href="#main-page" class="ui-btn-active" data-icon="video">火热战报</a></li>
+                <li><a href="#" data-icon="comment">聊天室</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div>
+</div>
+
+<div data-role="page" id="list-page">
+    <div data-icon="home" data-role="header" data-position="fixed" class="ui-icon-bars layout-header">
+        <h1>最新赛况</h1>
+    </div>
+
+    <div role="main" class="ui-content layout-content">
+
+
+        <div class="news-list-box">
+            <div class="ui-grid-a">
+                <div class="ui-block-a thumb-box">
+                    <a href="#article-page" class="thumb">
+                        <img src="img/list1.jpg" width="130" height="70" />
+                    </a>
+                </div>
+                <div class="ui-block-b news-content">
+                    <a href="#article-page"><h2>25场15泽马134秒破门</h2></a>
+                    <p>
+                        25场15球！秒破门马134秒破门马134秒破门...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-list-box">
+            <div class="ui-grid-a">
+                <div class="ui-block-a thumb-box">
+                    <a href="#article-page" class="thumb">
+                        <img src="img/list2.jpg" width="130" height="70" />
+                    </a>
+                </div>
+                <div class="ui-block-b news-content">
+                    <a href="#article-page"><h2>25场15泽马134秒破门</h2></a>
+                    <p>
+                        25场15球！秒破门马134秒破门马134秒破门...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-list-box">
+            <div class="ui-grid-a">
+                <div class="ui-block-b news-content">
+                    <a href="#article-page"><h2>  &nbsp;25场15泽马134秒破门</h2></a>
+                </div>
+            </div>
+            <div class="news-content news-description">
+                <p>
+                    25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门
+                </p>
+            </div>
+        </div>
+
+        <div class="news-list-box">
+            <div class="ui-grid-a">
+                <div class="ui-block-a thumb-box">
+                    <a href="#article-page" class="thumb">
+                        <img src="img/list1.jpg" width="130" height="70" />
+                    </a>
+                </div>
+                <div class="ui-block-b news-content">
+                    <a href="#article-page"><h2>25场15泽马134秒破门</h2></a>
+                    <p>
+                        25场15球！秒破门马134秒破门马134秒破门...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-list-box">
+            <div class="ui-grid-a">
+                <div class="ui-block-a thumb-box">
+                    <a href="#article-page" class="thumb">
+                        <img src="img/list2.jpg" width="130" height="70" />
+                    </a>
+                </div>
+                <div class="ui-block-b news-content">
+                    <a href="#article-page"><h2>25场15泽马134秒破门</h2></a>
+                    <p>
+                        25场15球！秒破门马134秒破门马134秒破门...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div data-role="footer" data-position="fixed" class="layout-footer">
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li><a href="#" data-icon="gear">百万竞猜</a></li>
+                <li><a href="#" data-icon="grid">今日赛事</a></li>
+                <li><a href="#main-page" class="ui-btn-active" data-icon="video">火热战报</a></li>
+                <li><a href="#" data-icon="comment">聊天室</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div>
+</div>
+
+<div data-role="page" id="article-page">
+    <div data-icon="home" data-role="header" data-position="fixed" class="ui-icon-bars layout-header">
+        <h1>火热战报</h1>
+    </div>
+
+    <div role="main" class="ui-content layout-content">
+
+        <div class="layout-article">
+            <h3>C罗世界波 科斯塔破门</h3>
+            <div class="layout-article-pic">
+                <img src="img/art.jpg" />
+            </div>
+            <div class="layout-article-content">
+                <p>
+                    C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门
+                </p>
+                <p>
+                    C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div data-role="footer" data-position="fixed" class="layout-footer">
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li><a href="#" data-icon="gear">百万竞猜</a></li>
+                <li><a href="#" data-icon="grid">今日赛事</a></li>
+                <li><a href="#main-page" class="ui-btn-active" data-icon="video">火热战报</a></li>
+                <li><a href="#" data-icon="comment">聊天室</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div>
+</div>
+
+<script src="assets/require.js" data-main="assets/dist/controller/index"></script>
+
+</body>
+</html>
