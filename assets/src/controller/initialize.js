@@ -27,6 +27,17 @@ define(['jquery', 'jquery.mobile',  'component/touchslider', 'component/touchScr
                 touchScroll = initializeScroll($, TouchScroll);
             });
 
+            if( touchScroll )  {
+                $(touchScroll.container).on('scrollstart', function(){
+                    touchScroll.vbar.show();
+                });
+
+                $(touchScroll.container).on('scrollstop', function(){
+                    touchScroll.vbar.show();
+                });
+            }
+
+
             // 品牌露出无缝滚动
             $('.layout-banner').superMarquee({
                 isEqual: true,

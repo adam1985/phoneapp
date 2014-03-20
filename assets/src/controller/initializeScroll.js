@@ -10,7 +10,7 @@ define( function(){
             id: layoutContent[0],
             width: 5,
             mouseWheel: true,
-            keyPress: true,
+            keyPress: false,
             opacity: 0.5,
             color: '#333',
             minLength: 20
