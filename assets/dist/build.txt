@@ -1,8 +1,0 @@
-
-controller/index.js
-----------------
-jquery/jquery.js
-mobile/jquery.mobile.js
-component/touchslider.js
-controller/init.js
-controller/index.js
