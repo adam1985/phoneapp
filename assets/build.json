@@ -1,0 +1,19 @@
+{
+    "baseUrl": "src",
+    "paths": {
+        "jquery": "jquery/jquery",
+        "jquery.mobile": "mobile/jquery.mobile",
+        "jquery.touchslider": "component/jquery.touchslider"
+    },
+    "shim": {
+        //"touchslider": ["jquery", "jquery.mobile"]
+    },
+    "dir": "dist",
+    "removeCombined": true,
+    "preserveLicenseComments": false,
+    "modules": [
+        {
+            "name": "controller/index"
+        }
+    ]
+}
