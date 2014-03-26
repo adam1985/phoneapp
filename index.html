@@ -1,235 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0;">
-<link rel="stylesheet" href="assets/styles/mobile/my-custom-theme.css" />
-<link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.icons-1.4.2.css" />
-<link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.structure-1.4.2.css" />
-<link rel="stylesheet" href="assets/styles/index.css" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0;">
+    <link rel="stylesheet" href="assets/styles/mobile/my-custom-theme.css"/>
+    <link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.icons-1.4.2.css"/>
+    <link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.structure-1.4.2.css"/>
+    <link rel="stylesheet" href="assets/styles/index.css"/>
 </head>
 <body>
-<div data-role="page" id="main-page" data-title="火热战报">
-    <div class="layout-header" data-position="fixed"  data-tap-toggle="false">
+<div data-role="page" id="index-page" data-title="火热战报" class="hide">
+    <div class="layout-header" data-position="fixed" data-tap-toggle="false">
         <div class="layout-header-box">
-            <div class="sprites layout-home-icon"></div>
+            <div class="sprites layout-home-icon"><a href="#"></a></div>
             <h1>火热战报</h1>
         </div>
     </div>
 
     <div role="main" class="ui-content layout-content">
-        <div class="page-width layout-banner-box">
-            <div class="page-width layout-banner">
-                <ul>
-                    <li>品牌露出内容1</li>
-                    <li>品牌露出内容2</li>
-                    <li>品牌露出内容3</li>
-                    <li>品牌露出内容4</li>
-                    <li>品牌露出内容5</li>
-                </ul>
-            </div>
-            <div class="sprites close-banner"></div>
-        </div>
-        <div class="page-width focus-picture" id="focus-picture">
-            <div class="focus-picture-box" id="focus-picture-box">
-                <div class="focus-picture-list">
-                    <a  data-transition="slide" href="#article-page">
-                        <img src="img/focuspic1.jpg" />
-                    </a>
-                </div>
-                <div class="focus-picture-list">
-                    <a  data-transition="slide" href="#article-page">
-                        <img src="img/focuspic2.jpg" />
-                    </a>
-                </div>
-                <div class="focus-picture-list">
-                    <a  data-transition="slide" href="#article-page">
-                        <img src="img/focuspic3.jpg" />
-                    </a>
-                </div>
-                <div class="focus-picture-list">
-                    <a  data-transition="slide" href="#article-page">
-                        <img src="img/focuspic4.jpg" />
-                    </a>
-                </div>
-                <div class="focus-picture-list">
-                    <a  data-transition="slide" href="#article-page">
-                        <img src="img/focuspic5.jpg" />
-                    </a>
-                </div>
-                <div class="focus-picture-list">
-                    <a  data-transition="slide" href="#article-page">
-                        <img src="img/focuspic6.jpg" />
-                    </a>
-                </div>
-            </div>
-            <div class="cl focus-picture-control">
-                <div class="fl focus-picture-titles" id="focus-picture-titles">
-                    <a  data-transition="slide" href="#article-page" class="on">25场15球！本泽马134秒1</a>
-                    <a  data-transition="slide" href="#article-page">25场15球！本泽马134秒2</a>
-                    <a  data-transition="slide" href="#article-page">25场15球！本泽马134秒3</a>
-                    <a  data-transition="slide" href="#article-page">25场15球！本泽马134秒4</a>
-                    <a  data-transition="slide" href="#article-page">25场15球！本泽马134秒5</a>
-                    <a  data-transition="slide" href="#article-page">25场15球！本泽马134秒6</a>
-                </div>
-                <div class="fr focus-picture-buttons" id="focus-picture-buttons">
-                    <a class="on" href="javascript:void(null)">1</a>
-                    <a href="javascript:void(null)">2</a>
-                    <a href="javascript:void(null)">3</a>
-                    <a href="javascript:void(null)">4</a>
-                    <a href="javascript:void(null)">5</a>
-                    <a href="javascript:void(null)">6</a>
-                </div>
-            </div>
-        </div>
+        <div class="page-width layout-banner-box" id="layout-banner-box"></div>
 
-        <div class="news-list-box">
-            <div class="news-list-header">
-                <a  data-transition="slide" class="category" href="#list-page">最新赛况</a>
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-a thumb-box">
-                    <a href="#article-page" class="thumb video-play" data-transition="slide">
-                        <img src="img/thumb1.jpg" />
-                        <span class="sprites video-play-btn">
+        <div class="page-width focus-picture" id="focus-picture"></div>
 
-                        </span>
-                    </a>
+        <div id="news-list-container">
 
-                </div>
-                <div class="ui-block-b news-content">
-                    <a  data-transition="slide" href="#article-page"><h2>席尔瓦传射孔帕尼红牌</h2></a>
-                    <p>
-                        曼城近8次联赛客战胡尔城4平4负未尝胜绩，最近一次客胜胡尔城还是1970年的足总杯[微博]...
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-            <div class="news-list-header">
-                <a  data-transition="slide" class="category" href="#list-page">精彩进球</a>
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-a thumb-box">
-                    <a href="#article-page" class="thumb" data-transition="slide">
-                        <img src="img/thumb1.jpg" width="130" height="97" />
-                    </a>
-                </div>
-                <div class="ui-block-b news-content">
-                    <a  data-transition="slide" href="#article-page"><h2>席尔瓦传射孔帕尼红牌</h2></a>
-                    <p>
-                        曼城近8次联赛客战胡尔城4平4负未尝胜绩，最近一次客胜胡尔城还是1970年的足总杯[微博]...
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-            <div class="news-list-header">
-                <a  data-transition="slide" class="category" href="#list-page">足球花边</a>
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-b news-content news-list-lace">
-                    <a  data-transition="slide" href="#article-page"><h2>25场15泽马134秒破门</h2></a>
-                </div>
-            </div>
-            <div class="news-content">
-                <p>
-                    25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门
-                </p>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-            <div class="news-list-header">
-                <a  data-transition="slide" class="category" href="#list-page">足球花边</a>
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-b news-content news-list-lace">
-                    <a  data-transition="slide" href="#article-page"><h2>25场15泽马134秒破门</h2></a>
-                </div>
-            </div>
-            <div class="news-content">
-                <p>
-                    25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门
-                </p>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-            <div class="news-list-header">
-                <a  data-transition="slide" class="category" href="#list-page">足球花边</a>
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-b news-content news-list-lace">
-                    <a  data-transition="slide" href="#article-page"><h2>25场15泽马134秒破门</h2></a>
-                </div>
-            </div>
-            <div class="news-content">
-                <p>
-                    25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门
-                </p>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-            <div class="news-list-header">
-                <a  data-transition="slide" class="category" href="#list-page">足球花边</a>
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-b news-content news-list-lace">
-                    <a  data-transition="slide" href="#article-page"><h2>25场15泽马134秒破门</h2></a>
-                </div>
-            </div>
-            <div class="news-content">
-                <p>
-                    25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门
-                </p>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-            <div class="news-list-header">
-                <a  data-transition="slide" class="category" href="#list-page">足球花边</a>
-            </div>
-            <div class="ui-grid-a">
-                <div class="ui-block-b news-content news-list-lace">
-                    <a  data-transition="slide" href="#article-page"><h2>25场15泽马134秒破门</h2></a>
-                </div>
-            </div>
-            <div class="news-content">
-                <p>
-                    25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门
-                </p>
-            </div>
         </div>
 
     </div>
+
 
     <div data-position="fixed" data-tap-toggle="false" class="layout-footer">
         <div class="page-width layout-footer-nav">
             <ul class="cl">
                 <li class="nav-item1">
-                    <a  data-transition="slide" href="#">
+                    <a data-transition="slide" href="#">
                         <i class="sprites"></i>
                         <span>百万竞猜</span>
                     </a>
                 </li>
                 <li class="nav-item2">
-                    <a  data-transition="slide" href="#">
+                    <a data-transition="slide" href="#">
                         <i class="sprites"></i>
                         <span>今日赛事</span>
                     </a>
                 </li>
                 <li class="nav-item3">
-                    <a  data-transition="slide" href="#" class="active">
+                    <a data-transition="slide" href="#" class="active">
                         <i class="sprites"></i>
                         <span>火热战报</span>
                     </a>
                 </li>
                 <li class="nav-item4">
-                    <a  data-transition="slide" href="#">
+                    <a data-transition="slide" href="#">
                         <i class="sprites"></i>
                         <span>聊天室</span>
                     </a>
@@ -240,207 +62,104 @@
 
 </div>
 
-<div data-role="page" id="list-page"  data-title="最新赛况">
-    <div class="layout-header" data-position="fixed"  data-tap-toggle="false">
-        <div class="layout-header-box">
-            <div class="sprites layout-home-icon layout-goback-icon"><a href="#"></a></div>
-            <h1>最新赛况</h1>
+<!-- 品牌露出模板 -->
+<script id="banner-template" type="text/html">
+    {{ if( list.length >>> 0 ){ }}
+    <div class="page-width layout-banner">
+        <ul>
+        {{ for ( var i = 0, len = list.length; i < len; i++ ) { }}
+            <li><a href="{{= list[i].src }}" target="_blank">{{= list[i].title }}</a> </li>
+        {{ } }}
+        </ul>
+    </div>
+    <div class="sprites close-banner"></div>
+    {{ } }}
+</script>
+
+<!-- 焦点图模板 -->
+<script id="focus-template" type="text/html">
+    {{ if( list.length >>> 0 ){ }}
+    <div class="focus-picture-box" id="focus-picture-box">
+        {{ for ( var i = 0, len = list.length; i < len; i++ ) { }}
+            <div class="focus-picture-list">
+                <a href="{{= list[i].src }}#{{= list[i].aid }}">
+                    <img src="{{= list[i].imgSrc }}"/>
+                </a>
+            </div>
+        {{ } }}
+    </div>
+    <div class="cl focus-picture-control">
+        <div class="fl focus-picture-titles" id="focus-picture-titles">
+            {{ for ( var i = 0, len = list.length; i < len; i++ ) { }}
+                {{ if( i === 0 ) { }}
+                    <a href="{{= list[i].src }}#{{= list[i].aid }}" class="on">{{= list[i].title }}</a>
+                {{ } else { }}
+                    <a href="{{= list[i].src }}#{{= list[i].aid }}">{{= list[i].title }}</a>
+                {{ } }}
+            {{ } }}
+        </div>
+        <div class="fr focus-picture-buttons" id="focus-picture-buttons">
+            {{ for ( var i = 0, len = list.length; i < len; i++ ) { }}
+                {{ if( i === 0) { }}
+                    <a href="javascript:void(null)" class="on">{{= list[i].title }}</a>
+                {{ } else { }}
+                    <a href="javascript:void(null)">{{= list[i].title }}</a>
+                {{ } }}
+            {{ } }}
         </div>
     </div>
+    {{ } }}
+</script>
 
-    <div role="main" class="ui-content layout-content">
+<!-- 热点新闻列表模板 -->
+<script id="hot-news-template" type="text/html">
+    {{ if( list.length >>> 0 ){ }}
+    {{ for ( var i = 0, len = list.length; i < len; i++ ) {
+        var target = list[i];
+    }}
+    <div class="news-list-box">
+        <div class="sprites news-list-header">
+            <a class="category" href="{{= target.src }}#{{= target.type }}">{{= target.title }}</a>
+        </div>
 
-        <div class="news-list-box">
-            <div class="ui-grid-a">
-                <div class="ui-block-a thumb-box">
-                    <a href="#article-page" class="thumb video-play" data-transition="slide">
-                        <img src="img/thumb1.jpg" />
-                        <span class="sprites video-play-btn">
+        {{ if( target.list.length >>> 0 ) { }}
+        {{ for ( var j = 0, length = target.list.length; j < length; j++ ) {
+            var current = target.list[j];
+        }}
 
-                        </span>
+            {{ if( current.imgSrc ) { }}
+            <div class="cl news-list-body">
+                <div class="fl thumb-box">
+                    <a href="{{= current.src }}#{{= current.aid }}" class="thumb" data-transition="slide">
+                        <img src="{{= current.imgSrc }}"/>
+                        {{ if( current.player ) { }}
+                            <span class="sprites video-play-btn"></span>
+                        {{ } }}
                     </a>
-
                 </div>
-                <div class="ui-block-b news-content">
-                    <a  data-transition="slide" href="#article-page"><h2>席尔瓦传射孔帕尼红牌</h2></a>
+                <div class="fr news-content">
+                    <div class="in-news-content">
+            {{ } else { }}
+            <div class="news-list-body">
+                <div class="news-content news-list-lace">
+                    <div>
+            {{ } }}
+
+                    <a href="{{= current.src }}#{{= current.aid }}"><h2>{{= current.title }}</h2></a>
                     <p>
-                        曼城近8次联赛客战胡尔城4平4负未尝胜绩，最近一次客胜胡尔城还是1970年的足总杯[微博]...
+                        {{= current.info }}
                     </p>
                 </div>
             </div>
+
         </div>
 
-        <div class="news-list-box">
-            <div class="ui-grid-a">
-                <div class="ui-block-a thumb-box">
-                    <a href="#article-page" class="thumb" data-transition="slide">
-                        <img src="img/thumb1.jpg" />
-                    </a>
-
-                </div>
-                <div class="ui-block-b news-content">
-                    <a  data-transition="slide" href="#article-page"><h2>席尔瓦传射孔帕尼红牌</h2></a>
-                    <p>
-                        曼城近8次联赛客战胡尔城4平4负未尝胜绩，最近一次客胜胡尔城还是1970年的足总杯[微博]...
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-            <div class="ui-grid-a">
-                <div class="ui-block-b news-content news-list-lace common-news-list">
-                    <a  data-transition="slide" href="#article-page"><h2>25场15泽马134秒破门</h2></a>
-                </div>
-            </div>
-            <div class="news-content">
-                <p>
-                    25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门
-                </p>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-            <div class="ui-grid-a">
-                <div class="ui-block-a thumb-box">
-                    <a href="#article-page" class="thumb video-play" data-transition="slide">
-                        <img src="img/thumb1.jpg" />
-                        <span class="sprites video-play-btn">
-
-                        </span>
-                    </a>
-
-                </div>
-                <div class="ui-block-b news-content">
-                    <a  data-transition="slide" href="#article-page"><h2>席尔瓦传射孔帕尼红牌</h2></a>
-                    <p>
-                        曼城近8次联赛客战胡尔城4平4负未尝胜绩，最近一次客胜胡尔城还是1970年的足总杯[微博]...
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-            <div class="ui-grid-a">
-                <div class="ui-block-a thumb-box">
-                    <a href="#article-page" class="thumb" data-transition="slide">
-                        <img src="img/thumb1.jpg" />
-                    </a>
-
-                </div>
-                <div class="ui-block-b news-content">
-                    <a  data-transition="slide" href="#article-page"><h2>席尔瓦传射孔帕尼红牌</h2></a>
-                    <p>
-                        曼城近8次联赛客战胡尔城4平4负未尝胜绩，最近一次客胜胡尔城还是1970年的足总杯[微博]...
-                    </p>
-                </div>
-            </div>
-        </div>
-
+        {{ } }}
+        {{ } }}
     </div>
-
-    <div data-position="fixed" data-tap-toggle="false" class="layout-footer">
-        <div class="page-width layout-footer-nav">
-            <ul class="cl">
-                <li class="nav-item1">
-                    <a  data-transition="slide" href="#">
-                        <i class="sprites"></i>
-                        <span>百万竞猜</span>
-                    </a>
-                </li>
-                <li class="nav-item2">
-                    <a  data-transition="slide" href="#">
-                        <i class="sprites"></i>
-                        <span>今日赛事</span>
-                    </a>
-                </li>
-                <li class="nav-item3">
-                    <a  data-transition="slide" href="#main-page" class="active">
-                        <i class="sprites"></i>
-                        <span>火热战报</span>
-                    </a>
-                </li>
-                <li class="nav-item4">
-                    <a  data-transition="slide" href="#">
-                        <i class="sprites"></i>
-                        <span>聊天室</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div data-role="page" id="article-page" data-title="火热战报">
-    <div class="layout-header" data-position="fixed"  data-tap-toggle="false">
-        <div class="layout-header-box">
-            <div class="sprites layout-home-icon layout-goback-icon"><a href="#"></a></div>
-            <h1>火热战报</h1>
-        </div>
-    </div>
-
-    <div role="main" class="ui-content layout-content">
-
-        <div class="layout-article">
-            <h3>C罗世界波 科斯塔破门</h3>
-            <div class="layout-article-pic">
-                <img src="img/max_pic.jpg" />
-            </div>
-            <div class="layout-article-content">
-                <p>
-                    C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门
-                </p>
-                <p>
-                    C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波
-                </p>
-                <p>
-                    C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门
-                </p>
-                <p>
-                    C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波
-                </p>
-                <p>
-                    C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门
-                </p>
-                <p>
-                    C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波 科斯塔破门C罗世界波
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-    <div data-position="fixed" data-tap-toggle="false" class="layout-footer">
-        <div class="page-width layout-footer-nav">
-            <ul class="cl">
-                <li class="nav-item1">
-                    <a  data-transition="slide" href="#">
-                        <i class="sprites"></i>
-                        <span>百万竞猜</span>
-                    </a>
-                </li>
-                <li class="nav-item2">
-                    <a  data-transition="slide" href="#">
-                        <i class="sprites"></i>
-                        <span>今日赛事</span>
-                    </a>
-                </li>
-                <li class="nav-item3">
-                    <a  data-transition="slide" href="#main-page" class="active">
-                        <i class="sprites"></i>
-                        <span>火热战报</span>
-                    </a>
-                </li>
-                <li class="nav-item4">
-                    <a  data-transition="slide" href="#">
-                        <i class="sprites"></i>
-                        <span>聊天室</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+    {{ } }}
+    {{ } }}
+</script>
 
 <script src="assets/require.js" data-main="assets/src/controller/index"></script>
 </body>

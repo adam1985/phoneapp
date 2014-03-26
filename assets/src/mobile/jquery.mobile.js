@@ -9,7 +9,6 @@
  *
  */
 
-
 (function ( root, doc, factory ) {
     if ( typeof define === "function" && define.amd ) {
         define( [ "jquery" ], function ( $ ) {

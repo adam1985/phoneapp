@@ -1,0 +1,6 @@
+configCallBack(
+    {
+        "base":""
+    }
+);
+
