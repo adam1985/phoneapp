@@ -1,8 +1,8 @@
-wonderfulGoalConCallBack(
+listConfCallBack(
     {
         "title": "精彩进球",
         "newsSource": "news-list-",
-        "latestPage": 1
+        "latestPage": 3
     }
 );
 

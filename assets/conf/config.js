@@ -1,6 +1,0 @@
-configCallBack(
-    {
-        "base":""
-    }
-);
-

@@ -7,25 +7,22 @@ define(['jquery', 'jquery.mobile', './commonInitialize',  './indexInitialize',  
 
         $(function(){
 
+            // 初始化公共模板
+            commonInitialize();
+
             //初始化首页模块
             if( $('#index-page').length ) {
-                indexInitialize( function() {
-                    commonInitialize();
-                });
+                indexInitialize();
             }
 
             //初始化文章详情页模块
             if( $('#list-page').length ) {
-                listInitialize( function(){
-                    commonInitialize();
-                });
+                listInitialize();
             }
 
             //初始化文章详情页模块
             if( $('#article-page').length ) {
-                articleInitialize( function(){
-                    commonInitialize();
-                });
+                articleInitialize();
             }
 
         });

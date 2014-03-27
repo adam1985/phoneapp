@@ -1,8 +1,8 @@
-laceNewsConCallBack(
+listConfCallBack(
     {
         "title": "足球花边",
         "newsSource": "news-list-",
-        "latestPage": 1
+        "latestPage": 3
     }
 );
 

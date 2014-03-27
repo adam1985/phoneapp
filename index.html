@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="assets/styles/mobile/my-custom-theme.css"/>
     <link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.icons-1.4.2.css"/>
     <link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.structure-1.4.2.css"/>
+    <link rel="stylesheet" href="assets/styles/scrollbar.css"/>
     <link rel="stylesheet" href="assets/styles/index.css"/>
 </head>
 <body>
@@ -18,40 +19,46 @@
     </div>
 
     <div role="main" class="ui-content layout-content">
-        <div class="page-width layout-banner-box" id="layout-banner-box"></div>
+        <div id="scroller">
+            <div id="pullDown">
+                <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+            </div>
+            <div class="page-width layout-banner-box" id="layout-banner-box"></div>
 
-        <div class="page-width focus-picture" id="focus-picture"></div>
+            <div class="page-width focus-picture" id="focus-picture"></div>
 
-        <div id="news-list-container">
+            <div id="news-list-container">
 
+            </div>
+            <div id="pullUp">
+                <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
+            </div>
         </div>
-
     </div>
-
 
     <div data-position="fixed" data-tap-toggle="false" class="layout-footer">
         <div class="page-width layout-footer-nav">
             <ul class="cl">
                 <li class="nav-item1">
-                    <a data-transition="slide" href="#">
+                    <a href="#">
                         <i class="sprites"></i>
                         <span>百万竞猜</span>
                     </a>
                 </li>
                 <li class="nav-item2">
-                    <a data-transition="slide" href="#">
+                    <a href="#">
                         <i class="sprites"></i>
                         <span>今日赛事</span>
                     </a>
                 </li>
                 <li class="nav-item3">
-                    <a data-transition="slide" href="#" class="active">
+                    <a href="#" class="active">
                         <i class="sprites"></i>
                         <span>火热战报</span>
                     </a>
                 </li>
                 <li class="nav-item4">
-                    <a data-transition="slide" href="#">
+                    <a href="#">
                         <i class="sprites"></i>
                         <span>聊天室</span>
                     </a>
@@ -130,7 +137,7 @@
             {{ if( current.imgSrc ) { }}
             <div class="cl news-list-body">
                 <div class="fl thumb-box">
-                    <a href="{{= current.src }}#{{= current.aid }}" class="thumb" data-transition="slide">
+                    <a href="{{= current.src }}#{{= current.aid }}" class="thumb">
                         <img src="{{= current.imgSrc }}"/>
                         {{ if( current.player ) { }}
                             <span class="sprites video-play-btn"></span>

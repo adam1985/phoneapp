@@ -6,114 +6,28 @@
     <link rel="stylesheet" href="assets/styles/mobile/my-custom-theme.css" />
     <link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.icons-1.4.2.css" />
     <link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.structure-1.4.2.css" />
+    <link rel="stylesheet" href="assets/styles/scrollbar.css"/>
     <link rel="stylesheet" href="assets/styles/index.css" />
 </head>
 <body>
-<div data-role="page" id="list-page"  data-title="最新赛况" class="hide">
+<div data-role="page" id="list-page"  data-title="" class="hide">
     <div class="layout-header" data-position="fixed"  data-tap-toggle="false">
         <div class="layout-header-box">
             <div class="sprites layout-home-icon layout-goback-index"><a href="index.html"></a></div>
-            <h1>最新赛况</h1>
+            <h1 id="news-lists-title"></h1>
         </div>
     </div>
 
     <div role="main" class="ui-content layout-content">
-
-        <div class="news-list-box">
-            <div class="cl news-list-body">
-                <div class="fl thumb-box">
-                    <a href="article.html" class="thumb video-play" data-transition="slide">
-                        <img src="img/thumb1.jpg" />
-                        <span class="sprites video-play-btn"></span>
-                    </a>
-                </div>
-                <div class="fr news-content">
-                    <div class="in-news-content">
-                        <a  data-transition="slide" href="article.html"><h2>席尔瓦传射孔帕尼红牌</h2></a>
-                        <p>
-                            曼城近8次联赛客战胡尔城4平4负未尝胜绩，最近一次客胜胡尔城还是1970年的足总杯[微博]...
-                        </p>
-                    </div>
-                </div>
+        <div id="scroller">
+            <div id="pullDown">
+                <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
             </div>
-        </div>
+            <div id="news-lists-container">
 
-        <div class="news-list-box">
-            <div class="cl news-list-body">
-                <div class="fl thumb-box">
-                    <a href="article.html" class="thumb" data-transition="slide">
-                        <img src="img/thumb1.jpg" />
-                    </a>
-                </div>
-                <div class="fr news-content">
-                    <div class="in-news-content">
-                        <a  data-transition="slide" href="article.html"><h2>席尔瓦传射孔帕尼红牌</h2></a>
-                        <p>
-                            曼城近8次联赛客战胡尔城4平4负未尝胜绩，最近一次客胜胡尔城还是1970年的足总杯[微博]...
-                        </p>
-                    </div>
-                </div>
             </div>
-        </div>
-
-        <div class="news-list-box">
-            <div class="news-list-body">
-                <div class="news-content news-list-lace">
-                    <a  data-transition="slide" href="article.html"><h2>席尔瓦传射孔帕尼红牌</h2></a>
-                    <p>
-                        25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-            <div class="cl news-list-body">
-                <div class="fl thumb-box">
-                    <a href="article.html" class="thumb video-play" data-transition="slide">
-                        <img src="img/thumb1.jpg" />
-                        <span class="sprites video-play-btn"></span>
-                    </a>
-                </div>
-                <div class="fr news-content">
-                    <div class="in-news-content">
-                        <a  data-transition="slide" href="article.html"><h2>席尔瓦传射孔帕尼红牌</h2></a>
-                        <p>
-                            曼城近8次联赛客战胡尔城4平4负未尝胜绩，最近一次客胜胡尔城还是1970年的足总杯[微博]...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-
-            <div class="cl news-list-body">
-                <div class="fl thumb-box">
-                    <a href="article.html" class="thumb" data-transition="slide">
-                        <img src="img/thumb1.jpg" />
-                    </a>
-                </div>
-                <div class="fr news-content">
-                    <div class="in-news-content">
-                        <a  data-transition="slide" href="article.html"><h2>席尔瓦传射孔帕尼红牌</h2></a>
-                        <p>
-                            曼城近8次联赛客战胡尔城4平4负未尝胜绩，最近一次客胜胡尔城还是1970年的足总杯[微博]...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="news-list-box">
-
-            <div class="news-list-body">
-                <div class="news-content news-list-lace">
-                    <a  data-transition="slide" href="article.html"><h2>席尔瓦传射孔帕尼红牌</h2></a>
-                    <p>
-                        25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门 25场15球！秒破门马134秒破门马134秒破门
-                    </p>
-                </div>
+            <div id="pullUp">
+                <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
             </div>
         </div>
 
@@ -123,7 +37,7 @@
         <div class="page-width layout-footer-nav">
             <ul class="cl">
                 <li class="nav-item1">
-                    <a  data-transition="slide" href="#">
+                    <a href="#">
                         <i class="sprites"></i>
                         <span>百万竞猜</span>
                     </a>
@@ -135,13 +49,13 @@
                     </a>
                 </li>
                 <li class="nav-item3">
-                    <a  data-transition="slide" href="index.html" class="active">
+                    <a href="index.html" class="active">
                         <i class="sprites"></i>
                         <span>火热战报</span>
                     </a>
                 </li>
                 <li class="nav-item4">
-                    <a  data-transition="slide" href="#">
+                    <a href="#">
                         <i class="sprites"></i>
                         <span>聊天室</span>
                     </a>
@@ -150,6 +64,51 @@
         </div>
     </div>
 </div>
+
+<!-- 新闻列表标题模板 -->
+<script id="lists-title-template" type="text/html">
+     {{= title }}
+</script>
+
+<!-- 新闻列表模板 -->
+<script id="news-lists-template" type="text/html">
+    {{ if( list.length >>> 0 ){ }}
+    {{ for ( var i = 0, len = list.length; i < len; i++ ) {
+        var target = list[i];
+    }}
+    <div class="news-list-box">
+
+        {{ if( target.imgSrc ) { }}
+        <div class="cl news-list-body">
+            <div class="fl thumb-box">
+                <a href="{{= target.src }}#{{= target.aid }}" class="thumb">
+                    <img src="{{= target.imgSrc }}"/>
+                    {{ if( target.player ) { }}
+                    <span class="sprites video-play-btn"></span>
+                    {{ } }}
+                </a>
+            </div>
+            <div class="fr news-content">
+                <div class="in-news-content">
+                    {{ } else { }}
+                    <div class="news-list-body">
+                        <div class="news-content news-list-lace">
+                            <div>
+                                {{ } }}
+
+                                <a href="{{= target.src }}#{{= target.aid }}"><h2>{{= target.title }}</h2></a>
+                                <p>
+                                    {{= target.info }}
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+    {{ } }}
+    {{ } }}
+</script>
+
 <script src="assets/require.js" data-main="assets/src/controller/index"></script>
 </body>
 </html>
