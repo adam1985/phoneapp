@@ -1,6 +1,6 @@
 define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider',
-    'component/superMarquee', './initializeScroll', 'component/tools', 'conf/config'],
-    function($, mobile, template, TouchSlider, superMarquee, initializeScroll, tools, config){
+    'component/superMarquee', './pullDownUpLoad', 'component/tools', 'conf/config'],
+    function($, mobile, template, TouchSlider, superMarquee, pullDownUpLoad, tools, config){
 
         return function( complete ){
 
@@ -96,16 +96,17 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                             });
                             complete && complete();
 
-                            initializeScroll(function(myScroll){
+                            pullDownUpLoad(function(myScroll){
                                 $.ajax({
                                     url: config.base + 'data/index/' + data.newsSource + data.latestPage + '.js',
                                     dataType: 'jsonp',
                                     jsonpCallback : 'newsListCallBack',
-                                    success: function( data ){
+                                    success: function( res ){
+                                        pageIndex = data.latestPage;
                                         var newsListContainer = $('#news-list-container');
-                                        if( data.length >>> 0) {
+                                        if( res.length >>> 0) {
                                             var templateStr = template.render('hot-news-template', {
-                                                list : data
+                                                list : res
                                             });
                                             newsListContainer.html( templateStr );
                                         }
@@ -132,11 +133,9 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                             myScroll.refresh();
                                         }
                                     });
-                                    return true;
-                                } else {
-                                    return false
+                                    return pageIndex > 1 ;
                                 }
-
+                                return false;
                             });
 
                         })

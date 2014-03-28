@@ -1,6 +1,5 @@
-define(['jquery', 'component/template', 'component/iscroll', './usableMaxHeight', 'conf/config'],
-    function($, template, iScroll, usableMaxHeight, config){
-        var iscroll;
+define(['jquery', 'component/template', './initializeScroll', 'component/jquery.lazyload', 'conf/config'],
+    function($, template, initializeScroll, lazyload, config){
         return function( complete ){
 
             var hash = location.hash.substr(1);
@@ -24,32 +23,14 @@ define(['jquery', 'component/template', 'component/iscroll', './usableMaxHeight'
 
                     complete && complete();
 
-                    var setTouchScroll = function() {
+                    var iscroll = initializeScroll();
 
-                        // 设置内容可视最大高度
-                        usableMaxHeight( $ );
-
-                        var layoutContent = $('.layout-content')[0];
-
-                        if( iscroll ) {
+                    $('img.lazy').lazyload({
+                        container: $('#scroller'),
+                        load : function(){
                             iscroll.refresh();
-                        } else {
-                            iscroll = new iScroll(layoutContent, {
-                                scrollbarClass: 'myScrollbar',
-                                useTransition: false,
-                                hideScrollbar: true
-                            });
                         }
-
-
-                        setTimeout(function () { layoutContent.style.left = '0'; }, 800);
-
-                        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-                    };
-
-                    setTouchScroll();
-
-                    $(window).on('orientationchange, resize', setTouchScroll);
+                    });
 
                 }
             });

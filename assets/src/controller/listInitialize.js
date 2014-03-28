@@ -1,4 +1,5 @@
-define(['jquery', 'component/template', './initializeScroll', 'conf/config'],  function($, template, initializeScroll, config){
+define(['jquery', 'component/template', './pullDownUpLoad', 'conf/config'],
+    function($, template, pullDownUpLoad, config){
 
         return function( complete ){
 
@@ -44,16 +45,18 @@ define(['jquery', 'component/template', './initializeScroll', 'conf/config'],  f
                         $.when( dtd ).done( function(){
                             complete && complete();
 
-                            initializeScroll(function(myScroll){
+                            pullDownUpLoad(function(myScroll){
                                 $.ajax({
                                     url: config.base + 'data/list/' + hash + '/' + data.newsSource + data.latestPage +  '.js',
                                     dataType: 'jsonp',
                                     jsonpCallback : 'newsListsCallBack',
-                                    success: function( data ){
-                                        if( data ) {
+                                    success: function( res ){
+                                        if( res ) {
+                                            pageIndex = data.latestPage;
+
                                             var newsListsContainer = $('#news-lists-container');
                                             var templateStr = template.render('news-lists-template', {
-                                                list : data
+                                                list : res
                                             });
                                             newsListsContainer.html( templateStr );
                                         }
@@ -63,7 +66,7 @@ define(['jquery', 'component/template', './initializeScroll', 'conf/config'],  f
                                 });
                             }, function(myScroll){
                                 --pageIndex;
-                                if( pageIndex > 1 ) {
+                                if( pageIndex > 0 ) {
                                     $.ajax({
                                         url: config.base + 'data/list/' + hash + '/' + data.newsSource + pageIndex + '.js',
                                         dataType: 'jsonp',
@@ -80,12 +83,11 @@ define(['jquery', 'component/template', './initializeScroll', 'conf/config'],  f
                                             myScroll.refresh();
                                         }
                                     });
-                                    return true;
-                                } else {
-                                    return false;
+                                    return pageIndex > 1;
                                 }
-
+                                return false;
                             });
+
                         });
                     }
 

@@ -72,6 +72,8 @@
 	font-weight:bold;
 	font-size:14px;
 	color:#888;
+    display: none;
+
 }
 #pullDown .pullDownIcon, #pullUp .pullUpIcon  {
 	display:block; float:left;
