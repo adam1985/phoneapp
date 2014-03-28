@@ -1,4 +1,4 @@
 define({
-    base : ""
+    base : "http://data.phoneapp.baofeng.com/"
 });
 

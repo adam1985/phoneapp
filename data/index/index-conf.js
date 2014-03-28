@@ -4,7 +4,7 @@ indexConfCallBack(
         "bannerSource": "banner-conf.js",
         "focusSource": "focus-conf.js",
         "newsSource": "news-list-",
-        "latestPage": 3
+        "latestPage": 11
     }
 );
 

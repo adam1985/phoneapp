@@ -17,9 +17,11 @@ define( ['jquery',  'component/iscroll', './usableMaxHeight'], function($, iScro
                     scrollbarClass: 'myScrollbar',
                     useTransition: false,
                     hideScrollbar: true,
-                    onScrollStart : function(){
-                        console.log(1111);
-                    }
+                    zoom: true,
+                    scrollX: true,
+                    scrollY: true,
+                    mouseWheel: true,
+                    wheelAction: 'zoom'
                 });
             }
 

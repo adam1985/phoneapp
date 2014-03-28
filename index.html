@@ -91,30 +91,36 @@
 <script id="focus-template" type="text/html">
     {{ if( list.length >>> 0 ){ }}
     <div class="focus-picture-box" id="focus-picture-box">
-        {{ for ( var i = 0, len = list.length; i < len; i++ ) { }}
+        {{ for ( var i = 0, len = list.length; i < len; i++ ) {
+            var current = list[i];
+        }}
             <div class="focus-picture-list">
-                <a href="{{= list[i].src }}#{{= list[i].aid }}">
-                    <img src="{{= list[i].imgSrc }}"/>
+                <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">
+                    <img src="{{= current.imgSrc }}"/>
                 </a>
             </div>
         {{ } }}
     </div>
     <div class="cl focus-picture-control">
         <div class="fl focus-picture-titles" id="focus-picture-titles">
-            {{ for ( var i = 0, len = list.length; i < len; i++ ) { }}
+            {{ for ( var i = 0, len = list.length; i < len; i++ ) {
+                var current = list[i];
+            }}
                 {{ if( i === 0 ) { }}
-                    <a href="{{= list[i].src }}#{{= list[i].aid }}" class="on">{{= list[i].title }}</a>
+                    <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="on">{{= current.title }}</a>
                 {{ } else { }}
-                    <a href="{{= list[i].src }}#{{= list[i].aid }}">{{= list[i].title }}</a>
+                    <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">{{= current.title }}</a>
                 {{ } }}
             {{ } }}
         </div>
         <div class="fr focus-picture-buttons" id="focus-picture-buttons">
-            {{ for ( var i = 0, len = list.length; i < len; i++ ) { }}
+            {{ for ( var i = 0, len = list.length; i < len; i++ ) {
+                var current = list[i];
+            }}
                 {{ if( i === 0) { }}
-                    <a href="javascript:void(null)" class="on">{{= list[i].title }}</a>
+                    <a href="javascript:void(null)" class="on">{{= current.title }}</a>
                 {{ } else { }}
-                    <a href="javascript:void(null)">{{= list[i].title }}</a>
+                    <a href="javascript:void(null)">{{= current.title }}</a>
                 {{ } }}
             {{ } }}
         </div>
@@ -133,7 +139,9 @@
             <a class="category" href="{{= target.src }}#{{= target.type }}">{{= target.title }}</a>
         </div>
 
-        {{ if( target.list.length >>> 0 ) { }}
+        {{ if( target.list.length >>> 0 ) {
+            target.list = target.list.reverse();
+        }}
         {{ for ( var j = 0, length = target.list.length; j < length; j++ ) {
             var current = target.list[j];
         }}
@@ -141,7 +149,7 @@
             {{ if( current.imgSrc ) { }}
             <div class="cl news-list-body">
                 <div class="fl thumb-box">
-                    <a href="{{= current.src }}#{{= current.aid }}" class="thumb">
+                    <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="thumb">
                         <img src="{{= current.imgSrc }}"/>
                         {{ if( current.player ) { }}
                             <span class="sprites video-play-btn"></span>
@@ -156,7 +164,7 @@
                     <div>
             {{ } }}
 
-                    <a href="{{= current.src }}#{{= current.aid }}"><h2>{{= current.title }}</h2></a>
+                    <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}"><h2>{{= current.title }}</h2></a>
                     <p>
                         {{= current.info }}
                     </p>

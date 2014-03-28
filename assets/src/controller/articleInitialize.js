@@ -27,6 +27,8 @@ define(['jquery', 'component/template', './initializeScroll', 'component/jquery.
 
                     $('img.lazy').lazyload({
                         container: $('#scroller'),
+                        effect      : 'fadeIn',
+                        event: "scrollstop",
                         load : function(){
                             iscroll.refresh();
                         }

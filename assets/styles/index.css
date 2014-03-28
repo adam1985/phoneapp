@@ -21,7 +21,7 @@ body{font-family: "微软雅黑", "宋体" , Arial, Helvetica, sans-serif; margi
 .layout-goback-icon, .layout-goback-index{ background-position: 0 -175px;}
 
 /* 页面banner区　*/
-.layout-banner-box{ position: relative;}
+.layout-banner-box{ position: relative; display: none;}
 .layout-banner{  height: 25px; background: #fffce1; line-height: 25px; text-align: center; font-size: 13px; overflow: hidden;}
 .layout-banner li, .layout-banner ul{ list-style: none; padding: 0; margin: 0;}
 .layout-banner a, .layout-banner a:hover{ color: #a8a37c; font-weight: normal;}
@@ -85,7 +85,7 @@ body{font-family: "微软雅黑", "宋体" , Arial, Helvetica, sans-serif; margi
 
 /* 页面详细页 */
 .layout-article{ padding: 0 10px 10px; }
-.layout-article h3{ margin: 5px 0 8px 0; color: #666;}
+.layout-article h3{ margin: 5px 0 8px 0; color: #666; font-size: 18px;}
 .layout-article-pic img{ width: 100%;}
 .layout-article-content p{ font-size: 14px; line-height: 1.5em; text-indent: 2em;}
 

@@ -1,7 +1,7 @@
 articleCallBack(
     {
         "title": "C罗世界波 科斯塔破门",
-        "imgSrc": "img/max_pic.jpg",
+        "imgSrc": "http://data.phoneapp.baofeng.com/img/max_pic.jpg",
         "content":
             "\
             <p>\

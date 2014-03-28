@@ -79,10 +79,20 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                 direction: 'up'
                             });
 
+                            var isDisplayBanner = !sessionStorage.getItem('is-display-banner'),
+                                layoutBannerBox = $('.layout-banner-box');
+
                             // 关闭品牌露出
                             $('.close-banner').click(function(){
-                                $(this).closest('.layout-banner-box').slideUp('slow');
+                                sessionStorage.setItem('is-display-banner', true);
+                                layoutBannerBox.slideUp('slow');
                             });
+
+                            // 展现品牌露出
+
+                            if( isDisplayBanner ) {
+                                layoutBannerBox.slideDown('slow');
+                            }
 
                             // 设置焦点图播放
                             TouchSlider('focus-picture-box',{

@@ -74,7 +74,9 @@
 
 <!-- 新闻列表模板 -->
 <script id="news-lists-template" type="text/html">
-    {{ if( list.length >>> 0 ){ }}
+    {{ if( list.length >>> 0 ){
+        list = list.reverse();
+    }}
     {{ for ( var i = 0, len = list.length; i < len; i++ ) {
         var target = list[i];
     }}
@@ -83,7 +85,7 @@
         {{ if( target.imgSrc ) { }}
         <div class="cl news-list-body">
             <div class="fl thumb-box">
-                <a href="{{= target.src }}#{{= target.aid }}" class="thumb">
+                <a href="{{= target.src }}{{ if( target.aid ){ }}#{{= target.aid }} {{ } }}" class="thumb">
                     <img src="{{= target.imgSrc }}"/>
                     {{ if( target.player ) { }}
                     <span class="sprites video-play-btn"></span>
@@ -98,7 +100,7 @@
                             <div>
                                 {{ } }}
 
-                                <a href="{{= target.src }}#{{= target.aid }}"><h2>{{= target.title }}</h2></a>
+                                <a href="{{= target.src }}#{{ if( target.aid ){ }}#{{= target.aid }} {{ } }}"><h2>{{= target.title }}</h2></a>
                                 <p>
                                     {{= target.info }}
                                 </p>
