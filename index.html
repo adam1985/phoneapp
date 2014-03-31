@@ -3,8 +3,10 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="assets/styles/index.css"/>
-    <script src="assets/require.min.js" data-main="assets/dist/controller/index"></script>
+    <script src="assets/require.min.js" data-main="assets/src/controller/index"></script>
 </head>
 <body>
 <div data-role="page" id="index-page" data-title="火热战报">
@@ -20,7 +22,7 @@
             <div id="pullDown">
                 <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
             </div>
-            <div class="scroller-box hide" id="scroller-box">
+            <div class="scroller-box" id="scroller-box">
                 <div class="page-width layout-banner-box" id="layout-banner-box"></div>
 
                 <div class="page-width focus-picture" id="focus-picture"></div>

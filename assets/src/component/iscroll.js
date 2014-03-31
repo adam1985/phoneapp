@@ -352,7 +352,7 @@ define(function(){
                 }
 
                 that[dir + 'ScrollbarWrapper'].style[transitionDelay] = '0';
-                that[dir + 'ScrollbarWrapper'].style.opacity = hidden && that.options.hideScrollbar ? '0' : '1';
+                that[dir + 'ScrollbarWrapper'].style.opacity = hidden && that.options.hideScrollbar ? '0' : '.5';
                 that[dir + 'ScrollbarIndicator'].style[transform] = 'translate(' + (dir == 'h' ? pos + 'px,0)' : '0,' + pos + 'px)') + translateZ;
             },
 

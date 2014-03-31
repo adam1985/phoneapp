@@ -1,4 +1,5 @@
-define( ['jquery',  'component/iscroll', './usableMaxHeight'], function($, iScroll, usableMaxHeight){
+define( ['jquery',  'component/iscroll', './usableMaxHeight', 'component/tools'],
+    function($, iScroll, usableMaxHeight, tools){
 
     var myScroll,
         pullDownEl, pullDownOffset,
@@ -30,7 +31,7 @@ define( ['jquery',  'component/iscroll', './usableMaxHeight'], function($, iScro
                     useTransition: false,
                     topOffset: pullDownOffset,
                     hideScrollbar: true,
-                    scrollbarClass: 'myScrollbar',
+                    scrollbarClass: tools.isWebkit ?  'myScrollbar' : false,
                     onRefresh: function () {
                         if (pullDownEl.className.match('loading')) {
                             pullDownEl.className = '';

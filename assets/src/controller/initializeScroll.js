@@ -1,4 +1,5 @@
-define( ['jquery',  'component/iscroll', './usableMaxHeight'], function($, iScroll, usableMaxHeight){
+define( ['jquery',  'component/iscroll', './usableMaxHeight',  'component/tools'],
+    function($, iScroll, usableMaxHeight, tools){
 
     var iscroll;
 
@@ -14,7 +15,7 @@ define( ['jquery',  'component/iscroll', './usableMaxHeight'], function($, iScro
                 iscroll.refresh();
             } else {
                 iscroll = new iScroll(layoutContent, {
-                    scrollbarClass: 'myScrollbar',
+                    scrollbarClass: tools.isWebkit ?  'myScrollbar' : false,
                     useTransition: false,
                     hideScrollbar: true,
                     zoom: true,

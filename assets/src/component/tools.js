@@ -17,10 +17,16 @@ define(['jquery'], function($){
             });
         }
         return [];
-    };
+    },
+
+    // 判断浏览器是否为webkit
+    isWebkit = (function() {
+        return document.body.style.WebkitBoxShadow !== undefined;
+    }());
 
     return {
-        subToArray : subToArray
+        subToArray : subToArray,
+        isWebkit : isWebkit
     };
 
 });
