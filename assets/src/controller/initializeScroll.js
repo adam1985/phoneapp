@@ -33,7 +33,7 @@ define( ['jquery',  'component/iscroll', './usableMaxHeight',  'component/tools'
             return iscroll;
         };
 
-        $(window).on('orientationchange, resize', setTouchScroll);
+        $(window).on('orientationchange, resize, window', setTouchScroll);
 
         return setTouchScroll();
     };
