@@ -71,6 +71,23 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
 
                             $.mobile.loading('hide');
 
+
+
+                            var isDisplayBanner = !sessionStorage.getItem('is-display-banner'),
+                                layoutBannerBox = $('.layout-banner-box');
+
+                            // 展现品牌露出
+
+                            if( isDisplayBanner ) {
+                                layoutBannerBox.slideDown('slow');
+                            }
+
+                            // 关闭品牌露出
+                            $('.close-banner').click(function(){
+                                sessionStorage.setItem('is-display-banner', true);
+                                layoutBannerBox.slideUp('slow');
+                            });
+
                             // 品牌露出无缝滚动
                             $('.layout-banner').superMarquee({
                                 isEqual: true,
@@ -79,20 +96,7 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                 direction: 'up'
                             });
 
-                            var isDisplayBanner = !sessionStorage.getItem('is-display-banner'),
-                                layoutBannerBox = $('.layout-banner-box');
 
-                            // 关闭品牌露出
-                            $('.close-banner').click(function(){
-                                sessionStorage.setItem('is-display-banner', true);
-                                layoutBannerBox.slideUp('slow');
-                            });
-
-                            // 展现品牌露出
-
-                            if( isDisplayBanner ) {
-                                layoutBannerBox.slideDown('slow');
-                            }
 
                             // 设置焦点图播放
                             TouchSlider('focus-picture-box',{

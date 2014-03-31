@@ -3,12 +3,12 @@ controller/index.js
 ----------------
 jquery/jquery.js
 mobile/jquery.mobile.js
+controller/usableMaxHeight.js
 controller/commonInitialize.js
 component/template.js
 component/touchslider.js
 component/superMarquee.js
 component/iscroll.js
-controller/usableMaxHeight.js
 controller/pullDownUpLoad.js
 component/tools.js
 conf/config.js

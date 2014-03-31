@@ -2,7 +2,7 @@ focusConfCallBack(
     [
         {
             "title": "25场15球！本泽马134秒7",
-            "src": "http://106.38.249.142/youku/6976E700AF030783DE9DF2917/0300020100532674F51EBC0742D2DA6D338DE3-4EB9-6EFE-DBD7-75B72636B14B.flv",
+            "src": "http://static.hd.baofeng.com/swf/player/loader.swf?ver=4464",
             "player" : true,
             "imgSrc": "http://data.phoneapp.baofeng.com/img/focuspic6.jpg"
         },
@@ -16,7 +16,7 @@ focusConfCallBack(
 
         {
             "title": "25场15球！本泽马134秒5",
-            "src": "http://106.38.249.142/youku/6976E700AF030783DE9DF2917/0300020100532674F51EBC0742D2DA6D338DE3-4EB9-6EFE-DBD7-75B72636B14B.flv",
+            "src": "http://static.hd.baofeng.com/swf/player/loader.swf?ver=4464",
             "player" : true,
             "imgSrc": "http://data.phoneapp.baofeng.com/img/focuspic5.jpg"
         },
@@ -42,7 +42,7 @@ focusConfCallBack(
         },
         {
             "title": "25场15球！本泽马134秒1",
-            "src": "http://106.38.249.142/youku/6976E700AF030783DE9DF2917/0300020100532674F51EBC0742D2DA6D338DE3-4EB9-6EFE-DBD7-75B72636B14B.flv",
+            "src": "http://static.hd.baofeng.com/swf/player/loader.swf?ver=4464",
             "player" : true,
             "imgSrc": "http://data.phoneapp.baofeng.com/img/focuspic1.jpg"
         }

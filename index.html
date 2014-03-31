@@ -3,10 +3,6 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0;">
-    <link rel="stylesheet" href="assets/styles/mobile/my-custom-theme.css"/>
-    <link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.icons-1.4.2.css"/>
-    <link rel="stylesheet" href="assets/styles/mobile/jquery.mobile.structure-1.4.2.css"/>
-    <link rel="stylesheet" href="assets/styles/scrollbar.css"/>
     <link rel="stylesheet" href="assets/styles/index.css"/>
     <script src="assets/require.min.js" data-main="assets/dist/controller/index"></script>
 </head>
@@ -163,7 +159,7 @@
                     <div>
             {{ } }}
 
-                    <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}"><h2>{{= current.title }}</h2></a>
+                    <h2><a class="atitle" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">{{= current.title }}</a></h2>
                     <p>
                         {{= current.info }}
                     </p>
