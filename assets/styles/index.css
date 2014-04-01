@@ -6,15 +6,18 @@
 .cl:after{content:"";display:block;height:0;clear:both;visibility:hidden}
 a{text-decoration:none;outline:none;}
 a:hover{text-decoration:none;}
-html{overflow: hidden;}
+html, body, .wrapper{overflow: hidden !important; height: 100%;}
 body{font-family: "微软雅黑", "宋体" , Arial, Helvetica, sans-serif; margin: 0; padding: 0;}
+.wrapper{ height: 100%; width: 100%;}
 .hide{ display: none;}
 .show, .block{ display: block;}
 .sprites{ background: url(../images/sprites.png) no-repeat; overflow: hidden;}
 .page-width{width: 100%;}
 
+.layout-header, .layout-content, .layout-footer{position:absolute;left:0; width:100%;}
+
 /* 页面头部　*/
-.layout-header{ height: 40px; line-height: 40px; background: #1c8a64; }
+.layout-header{ height: 40px; line-height: 40px; background: #1c8a64; top:0; }
 .layout-header-box{ text-align: center; position: relative; height: 100%;}
 .layout-header-box h1{ margin: 0; color: #f1f1f1; text-shadow: none; font-size: 18px; font-weight: normal;}
 .layout-home-icon, .layout-home-icon a{display:block; height:15px;width:20px;}
@@ -44,7 +47,7 @@ body{font-family: "微软雅黑", "宋体" , Arial, Helvetica, sans-serif; margi
 .focus-picture-buttons a.on{background: #fff;}
 
 /* 页面内容区 */
-.layout-content{ padding: 0; overflow: hidden; position: relative; height: 100%;}
+.layout-content{ padding: 0; overflow: hidden; top:40px; bottom:48px;}
 .layout-item-content{ display: none;}
 .layout-content .active { display: block;}
 .news-list-box{ border-bottom: 1px solid #cbcbcb; padding: 8px 8px 0 8px;}
@@ -59,9 +62,9 @@ body{font-family: "微软雅黑", "宋体" , Arial, Helvetica, sans-serif; margi
 .news-content{ width: 100%; margin-left: -140px;}
 .in-news-content{ margin-left: 140px;}
 .news-content h2, .news-content p {margin:0;}
-.news-content h2{}
-.news-content h2 a{color: #2da67b; font-size: 14px; vertical-align: top;}
-.news-content p{ font-size: 12px;}
+.news-content h2{ font-size: 14px; vertical-align: top; margin-bottom: 2px;}
+.news-content a{color: #2da67b; font-size: 14px; vertical-align: top;}
+.news-content p{ font-size: 12px; line-height: 1.5em; color: #8f8f8f; font-weight: normal;}
 
 .video-play, .thumb{ position: relative;}
 .video-play-btn{ display: block; position: absolute; right: 3px; bottom: 3px;  width: 20px; height: 20px; background: url(../images/play.png) no-repeat; /*background-position: 0 -200px;*/}
@@ -70,7 +73,7 @@ body{font-family: "微软雅黑", "宋体" , Arial, Helvetica, sans-serif; margi
 .common-news-list{margin-top: 0;}
 
 /* 底部导航栏 */
-.layout-footer{ width: 100%; position: fixed; top: 100%; margin-top: -48px;}
+.layout-footer{ bottom: 0; height: 48px;}
 .layout-footer-nav{ background: #278f6b; padding: 7px 0;}
 .layout-footer-nav ul, .layout-footer-nav li{margin: 0; padding: 0;}
 .layout-footer-nav li{ float: left; width: 25%; list-style: none; text-shadow: none; text-align: center;}

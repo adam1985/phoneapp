@@ -1,13 +1,10 @@
-define( ['jquery',  'component/iscroll', './usableMaxHeight',  'component/tools'],
-    function($, iScroll, usableMaxHeight, tools){
+define( ['jquery',  'component/iscroll',  'component/tools'],
+    function($, iScroll, tools){
 
     var iscroll;
 
     return function() {
         var setTouchScroll = function() {
-
-            // 设置内容可视最大高度
-            usableMaxHeight( $ );
 
             var layoutContent = $('.layout-content')[0];
 

@@ -1,5 +1,5 @@
-define( ['jquery',  'component/iscroll', './usableMaxHeight', 'component/tools'],
-    function($, iScroll, usableMaxHeight, tools){
+define( ['jquery',  'component/iscroll',  'component/tools'],
+    function($, iScroll, tools){
 
     var myScroll,
         pullDownEl, pullDownOffset,
@@ -10,9 +10,6 @@ define( ['jquery',  'component/iscroll', './usableMaxHeight', 'component/tools']
 
         //设置滚动条
         var setTouchScroll = function() {
-
-            // 设置内容可视最大高度
-            usableMaxHeight( $ );
 
             pullDownEl = document.getElementById('pullDown');
 

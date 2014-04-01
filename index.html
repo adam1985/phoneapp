@@ -6,18 +6,18 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="assets/styles/index.css"/>
-    <script src="assets/require.min.js" data-main="assets/src/controller/index"></script>
+    <script src="assets/require.min.js" data-main="assets/dist/controller/index"></script>
 </head>
 <body>
-<div data-role="page" id="index-page" data-title="火热战报">
-    <div class="layout-header" data-position="fixed" data-tap-toggle="false">
+<div class="wrapper" data-role="page" id="index-page" data-title="火热战报">
+    <div class="layout-header">
         <div class="layout-header-box">
             <div class="sprites layout-home-icon"><a href="#"></a></div>
             <h1>火热战报</h1>
         </div>
     </div>
 
-    <div role="main" class="ui-content layout-content">
+    <div role="main" class="layout-content">
         <div id="scroller">
             <div id="pullDown">
                 <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div data-position="fixed" data-tap-toggle="false" class="layout-footer">
+    <div class="layout-footer">
         <div class="page-width layout-footer-nav">
             <ul class="cl">
                 <li class="nav-item1">
@@ -161,11 +161,12 @@
                 <div class="news-content news-list-lace">
                     <div>
             {{ } }}
-
-                    <h2><a class="atitle" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">{{= current.title }}</a></h2>
-                    <p>
-                        {{= current.info }}
-                    </p>
+                        <a class="atitle" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">
+                            <h2>{{= current.title }}</h2>
+                            <p>
+                                {{= current.info }}
+                            </p>
+                        </a>
                 </div>
             </div>
 

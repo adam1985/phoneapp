@@ -7,15 +7,15 @@
     <script src="assets/require.min.js" data-main="assets/dist/controller/index"></script>
 </head>
 <body>
-<div data-role="page" id="list-page"  data-title="">
-    <div class="layout-header" data-position="fixed"  data-tap-toggle="false">
+<div class="wrapper" data-role="page" id="list-page"  data-title="">
+    <div class="layout-header">
         <div class="layout-header-box">
             <div class="sprites layout-home-icon layout-goback-index"><a href="index.html"></a></div>
             <h1 id="news-lists-title"></h1>
         </div>
     </div>
 
-    <div role="main" class="ui-content layout-content">
+    <div role="main" class="layout-content">
         <div id="scroller">
             <div id="pullDown">
                 <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
@@ -30,7 +30,7 @@
 
     </div>
 
-    <div data-position="fixed" data-tap-toggle="false" class="layout-footer">
+    <div class="layout-footer">
         <div class="page-width layout-footer-nav">
             <ul class="cl">
                 <li class="nav-item1">
