@@ -95,10 +95,12 @@
                             <div>
                                 {{ } }}
 
-                                <h2><a class="atitle" href="{{= target.src }}{{ if( target.aid ){ }}#{{= target.aid }} {{ } }}">{{= target.title }}</a></h2>
-                                <p>
-                                    {{= target.info }}
-                                </p>
+                                <a class="atitle" href="{{= target.src }}{{ if( target.aid ){ }}#{{= target.aid }} {{ } }}">
+                                    <h2>{{= target.title }}</h2>
+                                    <p>
+                                        {{= target.info }}
+                                    </p>
+                                </a>
                             </div>
                         </div>
 

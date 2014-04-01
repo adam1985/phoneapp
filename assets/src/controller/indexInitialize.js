@@ -71,8 +71,6 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
 
                             $.mobile.loading('hide');
 
-
-
                             var isDisplayBanner = !sessionStorage.getItem('is-display-banner'),
                                 layoutBannerBox = $('.layout-banner-box');
 
@@ -82,8 +80,10 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                 layoutBannerBox.slideDown('slow');
                             }
 
+                            var closeBanner = $('.close-banner');
+
                             // 关闭品牌露出
-                            $('.close-banner').click(function(){
+                            closeBanner.on('click', function(){
                                 sessionStorage.setItem('is-display-banner', true);
                                 layoutBannerBox.slideUp('slow');
                             });
