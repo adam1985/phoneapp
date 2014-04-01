@@ -19,7 +19,10 @@ define( ['jquery',  'component/iscroll',  'component/tools'],
                     scrollX: true,
                     scrollY: true,
                     mouseWheel: true,
-                    wheelAction: 'zoom'
+                    wheelAction: 'zoom',
+                    onBeforeScrollMove : function(){
+                        $('.layout-content').trigger('scroll');
+                    }
                 });
             }
 

@@ -26,9 +26,10 @@ define(['jquery', 'component/template', './initializeScroll', 'component/jquery.
                     var iscroll = initializeScroll();
 
                     layoutArticle.find('img').lazyload({
-                        container: $('#scroller'),
+                        container: $('.layout-content'),
                         //effect      : 'fadeIn',
-                        event: "scrollstop",
+                        //event: "scroll",
+                        "threshold": 200,
                         load : function(){
                             iscroll.refresh();
                         }
