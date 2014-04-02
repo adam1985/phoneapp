@@ -98,7 +98,7 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                 // 品牌露出无缝滚动
                                 $('.layout-banner').superMarquee({
                                     isEqual: true,
-                                    distance: 25,
+                                    distance: 30,
                                     time: 10,
                                     direction: 'up'
                                 });
@@ -164,13 +164,10 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                 });
                             });
 
-
-
                         });
                     }
                 }
             });
 
         };
-
 });

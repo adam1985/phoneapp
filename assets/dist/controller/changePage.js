@@ -1,1 +1,0 @@
-define(["jquery"],function(e){return function(t){var n=e("#main-page"),r=e("#layout-content",n),i=e("a",n);i.each(function(){var n=e(this),i=n.attr("data-href");i&&n.click(function(n){n.preventDefault&&n.preventDefault(),t&&t();var s=e(".layout-item-content",r),o=s.filter(".active"),u=r.find("."+i);o.hide().removeClass("active"),u.show().addClass("active")})})}});
