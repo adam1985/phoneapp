@@ -74,15 +74,17 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
 
                             var renderBanner = function(){
                                 var dtd = $.Deferred();  //在函数内部，新建一个Deferred对象
-                                var isDisplayBanner = !sessionStorage.getItem('is-hide-banner'),
+                                var isShow = !sessionStorage.getItem('is-hide-banner'),
                                     layoutBannerBox = $('.layout-banner-box');
 
                                 // 展现品牌露出
 
-                                if( isDisplayBanner ) {
+                                if( isShow ) {
                                     layoutBannerBox.slideDown('slow', function(){
                                         dtd.resolve(); // 改变Deferred对象的执行状态
                                     });
+                                } else {
+                                    dtd.resolve();
                                 }
 
                                 var closeBanner = $('.close-banner');
