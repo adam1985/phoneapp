@@ -22,7 +22,8 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                     var layoutBanner = $('#layout-banner-box');
                                     if( data.length >>> 0) {
                                         var templateStr = template.render('banner-template', {
-                                            list : tools.subToArray(data, 5, true)
+                                            list : tools.subToArray(data, 5, true),
+                                            isShow : !sessionStorage.getItem('is-hide-banner')
                                         });
                                         layoutBanner.html( templateStr );
                                     } else {
@@ -71,31 +72,37 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
 
                             $.mobile.loading('hide');
 
-                            var isDisplayBanner = !sessionStorage.getItem('is-display-banner'),
-                                layoutBannerBox = $('.layout-banner-box');
+                            var renderBanner = function(){
+                                var dtd = $.Deferred();  //在函数内部，新建一个Deferred对象
+                                var isDisplayBanner = !sessionStorage.getItem('is-hide-banner'),
+                                    layoutBannerBox = $('.layout-banner-box');
 
-                            // 展现品牌露出
+                                // 展现品牌露出
 
-                            if( isDisplayBanner ) {
-                                layoutBannerBox.slideDown('slow');
-                            }
+                                if( isDisplayBanner ) {
+                                    layoutBannerBox.slideDown('slow', function(){
+                                        dtd.resolve(); // 改变Deferred对象的执行状态
+                                    });
+                                }
 
-                            var closeBanner = $('.close-banner');
+                                var closeBanner = $('.close-banner');
 
-                            // 关闭品牌露出
-                            closeBanner.on('click', function(){
-                                sessionStorage.setItem('is-display-banner', true);
-                                layoutBannerBox.slideUp('slow');
-                            });
+                                // 关闭品牌露出
+                                closeBanner.on('click', function(){
+                                    sessionStorage.setItem('is-hide-banner', true);
+                                    layoutBannerBox.slideUp('slow');
+                                });
 
-                            // 品牌露出无缝滚动
-                            $('.layout-banner').superMarquee({
-                                isEqual: true,
-                                distance: 25,
-                                time: 10,
-                                direction: 'up'
-                            });
+                                // 品牌露出无缝滚动
+                                $('.layout-banner').superMarquee({
+                                    isEqual: true,
+                                    distance: 25,
+                                    time: 10,
+                                    direction: 'up'
+                                });
 
+                                return dtd.promise(); // 返回promise对象
+                            };
 
 
                             // 设置焦点图播放
@@ -108,51 +115,56 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                     $('#focus-picture-titles').find('a').removeClass('on').eq( index ).addClass('on');
                                 }
                             });
+
                             complete && complete();
 
-                            pullDownUpLoad(function(myScroll){
-                                $.ajax({
-                                    url: config.base + 'data/index/' + data.newsSource + data.latestPage + '.js',
-                                    dataType: 'jsonp',
-                                    jsonpCallback : 'newsListCallBack',
-                                    success: function( res ){
-                                        pageIndex = data.latestPage;
-                                        var newsListContainer = $('#news-list-container');
-                                        if( res.length >>> 0) {
-                                            var templateStr = template.render('hot-news-template', {
-                                                list : res
-                                            });
-                                            newsListContainer.html( templateStr );
-                                        }
-
-                                        myScroll.refresh();
-                                    }
-                                });
-                            }, function(myScroll){
-                                --pageIndex;
-                                if( pageIndex > 0 ) {
+                            $.when(renderBanner()).done(function(){
+                                pullDownUpLoad(function(myScroll){
                                     $.ajax({
-                                        url: config.base + 'data/index/' + data.newsSource + pageIndex + '.js',
+                                        url: config.base + 'data/index/' + data.newsSource + data.latestPage + '.js',
                                         dataType: 'jsonp',
                                         jsonpCallback : 'newsListCallBack',
-                                        success: function( data ){
+                                        success: function( res ){
+                                            pageIndex = data.latestPage;
                                             var newsListContainer = $('#news-list-container');
-                                            if( data.length >>> 0) {
+                                            if( res.length >>> 0) {
                                                 var templateStr = template.render('hot-news-template', {
-                                                    list : data
+                                                    list : res
                                                 });
-                                                newsListContainer.append( templateStr );
+                                                newsListContainer.html( templateStr );
                                             }
 
                                             myScroll.refresh();
                                         }
                                     });
-                                    return pageIndex > 1 ;
-                                }
-                                return false;
+                                }, function(myScroll){
+                                    --pageIndex;
+                                    if( pageIndex > 0 ) {
+                                        $.ajax({
+                                            url: config.base + 'data/index/' + data.newsSource + pageIndex + '.js',
+                                            dataType: 'jsonp',
+                                            jsonpCallback : 'newsListCallBack',
+                                            success: function( data ){
+                                                var newsListContainer = $('#news-list-container');
+                                                if( data.length >>> 0) {
+                                                    var templateStr = template.render('hot-news-template', {
+                                                        list : data
+                                                    });
+                                                    newsListContainer.append( templateStr );
+                                                }
+
+                                                myScroll.refresh();
+                                            }
+                                        });
+                                        return pageIndex > 1 ;
+                                    }
+                                    return false;
+                                });
                             });
 
-                        })
+
+
+                        });
                     }
                 }
             });

@@ -44,6 +44,7 @@ define( ['jquery',  'component/iscroll',  'component/tools'],
                         }
                     },
                     onScrollMove: function () {
+
                         if (this.y > 5 && !pullDownEl.className.match('flip')) {
                             pullDownEl.className = 'flip';
                             pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';

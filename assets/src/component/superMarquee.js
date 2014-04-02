@@ -32,6 +32,20 @@
 define(['jquery'], function( jQuery ){
     return (function($){
 
+        //重写jQuery.fn.hover方法
+        jQuery.fn.extend({
+            hover: function( fnOver, fnOut ) {
+                var hasTouch=('createTouch' in document) || ('ontouchstart' in window);
+                if( hasTouch ) {
+                    return this.touchstart( fnOver ).touchend( fnOut || fnOver );
+                } else {
+                    return this.mouseenter( fnOver ).mouseleave( fnOut || fnOver );
+                }
+                
+            }
+
+        });
+
         $.fn.superMarquee = function(options){
             var opts = $.extend({},$.fn.superMarquee.defaults, options);
 

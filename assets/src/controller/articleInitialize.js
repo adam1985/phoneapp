@@ -35,6 +35,9 @@ define(['jquery', 'component/template', './initializeScroll', 'component/jquery.
                         }
                     });
 
+                },
+                error : function(){
+                    alert('文章数据格式可能有误，请检查文章内容中换行是否加了\\换行符!');
                 }
             });
 

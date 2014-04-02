@@ -6,13 +6,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="assets/styles/index.css"/>
-    <script src="assets/require.min.js" data-main="assets/src/controller/index"></script>
+    <script src="assets/require.min.js" data-main="assets/dist/controller/index"></script>
 </head>
 <body>
 <div class="wrapper" data-role="page" id="index-page" data-title="火热战报">
     <div class="layout-header">
         <div class="layout-header-box">
-            <div class="sprites layout-home-icon"><a href="#"></a></div>
+            <div class="layout-home-icon"><a href="#"></a></div>
             <h1>火热战报</h1>
         </div>
     </div>
@@ -73,15 +73,15 @@
 
 <!-- 品牌露出模板 -->
 <script id="banner-template" type="text/html">
-    {{ if( list.length >>> 0 ){ }}
+    {{ if( isShow && list.length >>> 0 ){ }}
     <div class="page-width layout-banner">
         <ul>
         {{ for ( var i = 0, len = list.length; i < len; i++ ) { }}
-            <li><a href="{{= list[i].src }}" target="_blank">{{= list[i].title }}</a> </li>
+            <li><a href="{{= list[i].src }}" title="{{= list[i].title }}" target="_blank">{{= list[i].title }}</a> </li>
         {{ } }}
         </ul>
     </div>
-    <div class="sprites close-banner"></div>
+    <div class="close-banner"></div>
     {{ } }}
 </script>
 
@@ -105,9 +105,9 @@
                 var current = list[i];
             }}
                 {{ if( i === 0 ) { }}
-                    <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="on">{{= current.title }}</a>
+                    <a title="{{= current.title }}" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="on">{{= current.title }}</a>
                 {{ } else { }}
-                    <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">{{= current.title }}</a>
+                    <a title="{{= current.title }}" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">{{= current.title }}</a>
                 {{ } }}
             {{ } }}
         </div>

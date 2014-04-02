@@ -4,6 +4,7 @@
 .fr{float:right;}
 .cl{zoom:1;}
 .cl:after{content:"";display:block;height:0;clear:both;visibility:hidden}
+.ellipsis, .layout-banner li,.focus-picture-titles a { display:block;overflow: hidden; white-space: nowrap;text-overflow: ellipsis;}
 a{text-decoration:none;outline:none;}
 a:hover{text-decoration:none;}
 html, body, .wrapper{overflow: hidden !important; height: 100%;}
@@ -20,32 +21,31 @@ body{font-family: "微软雅黑", "宋体" , Arial, Helvetica, sans-serif; margi
 .layout-header{ height: 40px; line-height: 40px; background: #1c8a64; top:0; }
 .layout-header-box{ text-align: center; position: relative; height: 100%;}
 .layout-header-box h1{ margin: 0; color: #f1f1f1; text-shadow: none; font-size: 18px; font-weight: normal;}
-.layout-home-icon, .layout-home-icon a{display:block; height:15px;width:20px;}
-.layout-home-icon{ position: absolute; left: 10px; top : 50%; margin-top: -8px;height:15px;width:20px;background-position: 0 -160px;}
+.layout-home-icon,.layout-goback-icon, .layout-goback-index{position: absolute; left: 0;}
+.layout-home-icon, .layout-home-icon a{display:block; height:40px;width:40px;}
+.layout-home-icon{  background: url(../images/home.png) no-repeat 10px center;}
 .layout-goback-icon , .layout-goback-index, .layout-goback-icon a, .layout-goback-index a {
-    display:block; height:15px; width: 11px;
-}
-.layout-goback-icon a, .layout-goback-icon a{
-    box-shadow:2px 2px 5px #333;
+    display:block; height:40px; width: 40px;
 }
 
-.layout-goback-icon, .layout-goback-index{ background-position: 0 -175px;}
+.layout-goback-icon, .layout-goback-index{ background: url(../images/goback.png) no-repeat 10px center;}
 
 /* 页面banner区　*/
-.layout-banner-box{ position: relative; display: none;}
+.layout-banner-box{ position: relative;}
 .layout-banner{  height: 25px; background: #fffce1; line-height: 25px; text-align: center; font-size: 13px; overflow: hidden;}
-.layout-banner li, .layout-banner ul{ list-style: none; padding: 0; margin: 0;}
+.layout-banner li, .layout-banner ul{ list-style: none; padding: 0; margin: 0; }
+.layout-banner li{height: 25px; padding-left: 5px;width: 90%;}
 .layout-banner a{ color: #a8a37c; font-weight: normal;}
-.close-banner { position: absolute;height:10px;width:10px; right: 10px; top : 50%; margin-top: -5px; background-position: 0 -190px; cursor: pointer;}
+.close-banner {background: url("../images/original/close.png") no-repeat;cursor: pointer;height: 20px;margin-top: -10px;position: absolute;right: 5px;top: 50%;width: 20px;}
 
 /* 焦点图 */
 .focus-picture{ position: relative;}
 .focus-picture-box{ height: 150px;overflow:hidden;}
 .focus-picture-list{ height:100%;}
 .focus-picture-list img{ width: 100%;}
-.focus-picture-control{ height: 30px; line-height: 30px; position: absolute; bottom: -3px; width: 100%;}
-.focus-picture-titles{ padding-left: 5px;}
-.focus-picture-titles a{ display: none; font-size: 14px; text-shadow: none; font-weight: normal;}
+.focus-picture-control{ height: 25px; line-height: 25px; position: absolute; bottom: 0; width: 100%;}
+.focus-picture-titles{ padding-left: 5px; width: 60%;}
+.focus-picture-titles a{ display: none; font-size: 14px; text-shadow: none; font-weight: normal; width: 100%;}
 .focus-picture-titles a, .focus-picture-titles a:hover{ color: #fff;}
 .focus-picture-titles a.on{ display: block;}
 .focus-picture-buttons{ padding-right: 5px;}

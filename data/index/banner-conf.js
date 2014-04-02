@@ -21,7 +21,7 @@ bannerConfCallBack(
             "src": "http://www.baidu.com"
         },
         {
-            "title": "品牌露出内容1",
+            "title": "品牌露出内容品牌露出内容1品牌露出内容1品牌露出内容1品牌露出内容1品牌露出内容1品牌露出内容1品牌露出内容11",
             "src": "http://www.baidu.com"
         }
     ]
