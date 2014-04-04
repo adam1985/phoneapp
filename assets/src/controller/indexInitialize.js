@@ -121,47 +121,53 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                             complete && complete();
 
                             $.when(renderBanner()).done(function(){
-                                pullDownUpLoad(function(myScroll){
-                                    $.ajax({
-                                        url: config.base + 'data/index/' + data.newsSource + data.latestPage + '.js',
-                                        dataType: 'jsonp',
-                                        jsonpCallback : 'newsListCallBack',
-                                        success: function( res ){
-                                            pageIndex = data.latestPage;
-                                            var newsListContainer = $('#news-list-container');
-                                            if( res.length >>> 0) {
-                                                var templateStr = template.render('hot-news-template', {
-                                                    list : res
-                                                });
-                                                newsListContainer.html( templateStr );
-                                            }
-
-                                            myScroll.refresh();
-                                        }
-                                    });
-                                }, function(myScroll){
-                                    --pageIndex;
-                                    if( pageIndex > 0 ) {
+                                var focusPictrue = $('#focus-picture'),
+                                    firstFocusImg = $('#focus-picture-box').find('img').eq(0);
+                                firstFocusImg.on('load', function(){
+                                    focusPictrue.height( this.height );
+                                    pullDownUpLoad(function(myScroll){
                                         $.ajax({
-                                            url: config.base + 'data/index/' + data.newsSource + pageIndex + '.js',
+                                            url: config.base + 'data/index/' + data.newsSource + data.latestPage + '.js',
                                             dataType: 'jsonp',
                                             jsonpCallback : 'newsListCallBack',
-                                            success: function( data ){
+                                            success: function( res ){
+                                                pageIndex = data.latestPage;
                                                 var newsListContainer = $('#news-list-container');
-                                                if( data.length >>> 0) {
+                                                if( res.length >>> 0) {
                                                     var templateStr = template.render('hot-news-template', {
-                                                        list : data
+                                                        list : res
                                                     });
-                                                    newsListContainer.append( templateStr );
+                                                    newsListContainer.html( templateStr );
                                                 }
 
                                                 myScroll.refresh();
                                             }
                                         });
-                                        return pageIndex > 1 ;
-                                    }
-                                    return false;
+                                    }, function(myScroll){
+                                        --pageIndex;
+                                        if( pageIndex > 0 ) {
+                                            $.ajax({
+                                                url: config.base + 'data/index/' + data.newsSource + pageIndex + '.js',
+                                                dataType: 'jsonp',
+                                                jsonpCallback : 'newsListCallBack',
+                                                success: function( data ){
+                                                    var newsListContainer = $('#news-list-container');
+                                                    if( data.length >>> 0) {
+                                                        var templateStr = template.render('hot-news-template', {
+                                                            list : data
+                                                        });
+                                                        newsListContainer.append( templateStr );
+                                                    }
+
+                                                    myScroll.refresh();
+                                                }
+                                            });
+                                            return pageIndex > 1 ;
+                                        }
+                                        return false;
+                                    });
                                 });
+
                             });
 
                         });

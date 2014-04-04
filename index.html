@@ -10,7 +10,12 @@
 </head>
 <body>
 <div class="wrapper" data-role="page" id="index-page" data-title="火热战报">
-
+    <div class="layout-header">
+        <div class="layout-header-box">
+            <div class="layout-home-icon"><a href="#"></a></div>
+            <h1>火热战报</h1>
+        </div>
+    </div>
     <div role="main" class="layout-content">
         <div id="scroller">
             <div id="pullDown">
@@ -31,6 +36,7 @@
             </div>
         </div>
     </div>
+    <div class="layout-footer"></div>
 
 </div>
 
@@ -51,12 +57,12 @@
 <!-- 焦点图模板 -->
 <script id="focus-template" type="text/html">
     {{ if( list.length >>> 0 ){ }}
-    <div class="focus-picture-box" id="focus-picture-box">
+    <div class="cl focus-picture-box" id="focus-picture-box">
         {{ for ( var i = 0, len = list.length; i < len; i++ ) {
             var current = list[i];
         }}
             <div class="focus-picture-list">
-                <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">
+                <a target="_blank" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">
                     <img src="{{= current.imgSrc }}"/>
                 </a>
             </div>
@@ -68,9 +74,9 @@
                 var current = list[i];
             }}
                 {{ if( i === 0 ) { }}
-                    <a title="{{= current.title }}" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="on">{{= current.title }}</a>
+                    <a target="_blank" title="{{= current.title }}" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="on">{{= current.title }}</a>
                 {{ } else { }}
-                    <a title="{{= current.title }}" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">{{= current.title }}</a>
+                    <a target="_blank" title="{{= current.title }}" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">{{= current.title }}</a>
                 {{ } }}
             {{ } }}
         </div>
@@ -110,7 +116,7 @@
             {{ if( current.imgSrc ) { }}
             <div class="cl news-list-body">
                 <div class="fl thumb-box">
-                    <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="thumb">
+                    <a target="_blank" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="thumb">
                         <img src="{{= current.imgSrc }}"/>
                         {{ if( current.player ) { }}
                             <span class="sprites video-play-btn"></span>
@@ -124,7 +130,7 @@
                 <div class="news-content news-list-lace">
                     <div>
             {{ } }}
-                        <a class="atitle" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">
+                        <a target="_blank" class="atitle" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">
                             <h2>{{= current.title }}</h2>
                             <p>
                                 {{= current.info }}

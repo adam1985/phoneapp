@@ -17,6 +17,11 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'conf/config'],
                     if( data ) {
                         document.title = data.title;
                         var pageIndex = data.latestPage;
+                        var templateStr = template.render('lists-title-template', {
+                            title : data.title
+                        });
+
+                        $('#news-lists-title').html( templateStr );
 
                         var dtd = $.ajax({
                             url: config.base + 'data/list/' + hash + '/' + data.newsSource + data.latestPage +  '.js',

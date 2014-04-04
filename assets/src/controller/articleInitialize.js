@@ -43,7 +43,8 @@ define(['jquery', 'component/template', './initializeScroll', 'component/jquery.
 
             // 返回上一页
             $('.layout-goback-icon').click(function(){
-                history.go(-1);
+                //history.go(-1);
+                window.close();
             });
 
         };
