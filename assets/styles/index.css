@@ -4,11 +4,11 @@
 .fr{float:right;}
 .cl{zoom:1;}
 .cl:after{content:"";display:block;height:0;clear:both;visibility:hidden}
-.ellipsis, .layout-banner li,.focus-picture-titles a { display:block;overflow: hidden; white-space: nowrap;text-overflow: ellipsis;}
+.ellipsis, .layout-banner li,.focus-picture-titles a,.qt-item a { display:block;overflow: hidden; white-space: nowrap;text-overflow: ellipsis;}
 a{text-decoration:none;outline:none;}
 a:hover{text-decoration:none;}
 html, body, .wrapper{overflow: hidden !important; height: 100%;}
-body{font-family: "微软雅黑", "宋体" , Arial, Helvetica, sans-serif; margin: 0; padding: 0;}
+body{font-family: "微软雅黑", "宋体" , Arial, Helvetica, sans-serif; margin: 0; padding: 0;-webkit-user-select: none; -moz-user-select: none;   }
 .wrapper{ height: 100%; width: 100%;}
 .hide{ display: none;}
 .show, .block{ display: block;}
@@ -104,3 +104,39 @@ body{font-family: "微软雅黑", "宋体" , Arial, Helvetica, sans-serif; margi
 .layout-article-content p{ font-size: 14px; line-height: 1.5em; text-indent: 2em;}
 
 
+/* 问答页面 */
+.qa-content, .disclaimer-content{ top: 0; height: 100%;font-size: 15px;}
+.qa-title{padding:0 10px;  font-weight: bold; position: relative; cursor: pointer;}
+.qa-title a{
+    display: block; position: absolute; right: 15px; top: 50%; margin-top: -4px;
+    width:0;
+    height:0;
+    overflow:hidden;
+    vertical-align:middle;
+}
+.toggle-slide-up{ display: block; position: absolute; right: 15px; top: 50%; margin-top: -4px;
+
+    border-width:0 7px 7px 7px;
+    border-color:transparent transparent #dfdfdf transparent;
+    border-style:none dashed solid dashed;
+}
+
+.toggle-slide-down{
+    border-width:7px 7px 0 7px;
+    border-color:#dfdfdf transparent transparent transparent;
+    border-style:solid dashed none dashed;
+}
+
+.qa-title{ height: 45px; line-height:45px; }
+.qa-list{ background: #f4f4f4; border-top:1px solid #efefef; }
+.qa-item{ border-bottom: 1px solid #e9e9e9; margin: 0 10px;}
+.qa-item a{  color: #787878; font-weight: normal; display: block; width: 100%; padding: 12px 0;}
+.qa-answer{ display: none; margin-left: 24px; text-align: justify; margin-top: 5px;}
+.qa-answer p{margin: 0 0 3px 0; overflow: hidden;}
+.qa-answer em,.qa-answer span{display: block; float: left;}
+.qa-answer em{ font-style: normal; margin-right: 10px; }
+.qa-answer span {  width: 90%;text-align: justify;}
+
+/* 免责声明 */
+.disclaimer-content h2{ text-align: center; font-size: 18px;}
+.disclaimer-detail p{ margin: 0 0 5px 0;  line-height: 1.5em;}

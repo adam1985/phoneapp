@@ -17,5 +17,7 @@ controller/listInitialize.js
 controller/initializeScroll.js
 component/jquery.lazyload.js
 controller/articleInitialize.js
+controller/qaInitialize.js
+controller/disclaimerInitialize.js
 controller/initialize.js
 controller/index.js

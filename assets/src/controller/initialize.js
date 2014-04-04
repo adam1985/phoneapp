@@ -1,5 +1,6 @@
-define(['jquery', 'jquery.mobile', './commonInitialize',  './indexInitialize',  './listInitialize',  './articleInitialize'],
-    function($, mobile, commonInitialize, indexInitialize, listInitialize, articleInitialize){
+define(['jquery', 'jquery.mobile', './commonInitialize',  './indexInitialize',  './listInitialize',
+    './articleInitialize', './qaInitialize',  './disclaimerInitialize'],
+    function($, mobile, commonInitialize, indexInitialize, listInitialize, articleInitialize, qaInitialize, disclaimerInitialize){
 
         $.extend( $.mobile, {
             ajaxEnabled: false
@@ -20,11 +21,20 @@ define(['jquery', 'jquery.mobile', './commonInitialize',  './indexInitialize',  
                 listInitialize();
             }
 
-            //初始化文章详情页模块
+            // 初始化文章详情页模块
             if( $('#article-page').length ) {
                 articleInitialize();
             }
 
+            // 活动规则
+            if( $('#qa-page').length ) {
+                qaInitialize();
+            }
+
+            // 免责声明
+            if( $('#disclaimer-page').length ) {
+                disclaimerInitialize();
+            }
         });
 
 });
