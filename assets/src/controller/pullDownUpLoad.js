@@ -83,10 +83,15 @@ define( ['jquery',  'component/iscroll',  'component/tools'],
 
 
             document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+            return myScroll;
         };
 
-        setTouchScroll();
 
         $(window).on('orientationchange, resize', setTouchScroll);
+
+        return setTouchScroll();
+
+
     };
 });

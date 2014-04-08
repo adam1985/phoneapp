@@ -1,4 +1,4 @@
 define({
-    base : "http://data.phoneapp.baofeng.com/"
+    base : "http://worldcup.baofeng.com/static/hot_report/" // http://data.phoneapp.baofeng.com/
 });
 

@@ -62,7 +62,7 @@
             var current = list[i];
         }}
             <div class="focus-picture-list">
-                <a target="_blank" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">
+                <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">
                     <img src="{{= current.imgSrc }}"/>
                 </a>
             </div>
@@ -74,9 +74,9 @@
                 var current = list[i];
             }}
                 {{ if( i === 0 ) { }}
-                    <a target="_blank" title="{{= current.title }}" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="on">{{= current.title }}</a>
+                    <a title="{{= current.title }}" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="on">{{= current.title }}</a>
                 {{ } else { }}
-                    <a target="_blank" title="{{= current.title }}" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">{{= current.title }}</a>
+                    <a title="{{= current.title }}" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">{{= current.title }}</a>
                 {{ } }}
             {{ } }}
         </div>
@@ -116,7 +116,7 @@
             {{ if( current.imgSrc ) { }}
             <div class="cl news-list-body">
                 <div class="fl thumb-box">
-                    <a target="_blank" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="thumb">
+                    <a href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}" class="thumb">
                         <img src="{{= current.imgSrc }}"/>
                         {{ if( current.player ) { }}
                             <span class="sprites video-play-btn"></span>
@@ -130,7 +130,7 @@
                 <div class="news-content news-list-lace">
                     <div>
             {{ } }}
-                        <a target="_blank" class="atitle" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">
+                        <a class="atitle" href="{{= current.src }}{{ if( current.aid ){ }}#{{= current.aid }} {{ } }}">
                             <h2>{{= current.title }}</h2>
                             <p>
                                 {{= current.info }}
