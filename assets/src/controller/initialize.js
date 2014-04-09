@@ -1,6 +1,7 @@
 define(['jquery', 'jquery.mobile', './commonInitialize',  './indexInitialize',  './listInitialize',
-    './articleInitialize', './qaInitialize',  './disclaimerInitialize'],
-    function($, mobile, commonInitialize, indexInitialize, listInitialize, articleInitialize, qaInitialize, disclaimerInitialize){
+    './articleInitialize', './qaInitialize',  './commonIscroll'],
+    function($, mobile, commonInitialize, indexInitialize, listInitialize,
+             articleInitialize, qaInitialize, commonIscroll){
 
         $.extend( $.mobile, {
             ajaxEnabled: false
@@ -31,10 +32,11 @@ define(['jquery', 'jquery.mobile', './commonInitialize',  './indexInitialize',  
                 qaInitialize();
             }
 
-            // 免责声明
-            if( $('#disclaimer-page').length ) {
-                disclaimerInitialize();
+            // 渲染滚动条
+            if( $('.common-page').length ) {
+                commonIscroll();
             }
+
         });
 
 });

@@ -7,6 +7,16 @@ define(['jquery', './initializeScroll'], function($, initializeScroll){
                 wheelAction : null
             });
 
+            var setOffsetTop = function( obj ) {
+                var top = obj.getBoundingClientRect().top + $(obj).height(),
+                    se = document.documentElement.clientHeight,
+                    offsetTop = top - se ;
+                if( offsetTop > 0 ) {
+                    iscroll.scrollTo(0, iscroll.y - offsetTop);
+                }
+            };
+
+
             var qaTitle = $('.qa-title');
             qaTitle.click( function(){
                 var $this = $(this),
@@ -17,11 +27,13 @@ define(['jquery', './initializeScroll'], function($, initializeScroll){
                 if( isShow ) {
                     qaList.slideUp(function(){
                         iscroll.refresh();
+                        setOffsetTop(this);
                     });
                     toggleSlide[0].className = 'toggle-slide-down';
                 } else {
                     qaList.slideDown( function(){
                         iscroll.refresh();
+                        setOffsetTop(this);
                     });
                     toggleSlide[0].className = 'toggle-slide-up';
                 }
@@ -30,6 +42,7 @@ define(['jquery', './initializeScroll'], function($, initializeScroll){
             $('.qa-item').find('a').click(function(){
                 $(this).next('.qa-answer').slideToggle( function(){
                     iscroll.refresh();
+                    setOffsetTop(this);
                 });
             });
     };

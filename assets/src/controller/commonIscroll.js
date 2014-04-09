@@ -5,5 +5,9 @@ define(['jquery', './initializeScroll'], function($, initializeScroll){
                 wheelAction : null
             });
 
+        $(window).on('load', function(){
+            iscroll.refresh();
+        });
+
     };
 });

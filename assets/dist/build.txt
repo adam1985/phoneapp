@@ -18,6 +18,6 @@ controller/initializeScroll.js
 component/jquery.lazyload.js
 controller/articleInitialize.js
 controller/qaInitialize.js
-controller/disclaimerInitialize.js
+controller/commonIscroll.js
 controller/initialize.js
 controller/index.js
