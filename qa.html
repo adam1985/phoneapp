@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="assets/styles/index.css"/>
-    <script src="assets/require.min.js" data-main="assets/dist/controller/index"></script>
+    <script src="assets/require.min.js" data-main="assets/src/controller/index"></script>
 </head>
 <body>
 <div class="wrapper" data-role="page" id="qa-page" data-title="百万竞猜规则说明">
@@ -14,32 +14,35 @@
         <div id="scroller">
             <div class="qa-content-box">
                 <div class="qa-title">
-                    百万竞猜活动规则
+                    “百万竞猜”活动规则
                     <a class="toggle-slide-up" href="javascript:void(null)"></a>
                 </div>
                 <div class="qa-list">
                     <div class="qa-item">
-                        <a href="javascript:void(null)">1、如何填写竞猜券？</a>
+                        <a href="javascript:void(null)">1、Q：竞猜券上需要填什么内容呢？</a>
                         <div class="qa-answer">
-                            用户可使用一张竞猜劵预测并填写世界杯8个小组中每个小组排名第一、第二的两只出线的队伍，
-                            并根据预测的小组赛出线情况分别选择每轮淘汰赛共16场比赛的获胜队伍。
-                            最终生成16场淘汰赛的对阵双方及获胜队伍的预测，完整填写完所有预测视为一张有效的竞猜劵；
+                            A：用户可使用一张竞猜劵预测并填写世界杯8个小组中每个小组排名第一、第二的两只出线的队伍，并根据预测的小组赛出线情况分别选择每轮淘汰赛共16场比赛的获胜队伍。最终生成16场淘汰赛的对阵双方及获胜队伍的预测，完整填写完所有预测视为一张有效的竞猜劵。
                         </div>
                     </div>
 
                     <div class="qa-item">
-                        <a href="javascript:void(null)">2、竞猜券有截止日期么？</a>
+                        <a href="javascript:void(null)">2、Q：竞猜券什么时候提交都可以么？提交之后可不可以改？</a>
                         <div class="qa-answer">
-                            竞猜劵的最晚提交时间2014年6月24日00:00，即为小组赛前两轮32场比赛结束之后，同时在2014年6月24日00:00之前可对已经填写完成的预测结果进行修改，<br />
-                            每张竞猜劵只可修改一次；<br />
-                            每张竞猜劵的均有自己的提交时间，竞猜劵如有修改则以修改时间作为最终提交时间，<br />
-                            每张竞猜劵预测结果可以相同，每个注册用户最多可获得并填写10张竞猜劵；
+                            A：竞猜劵的最晚提交时间2014年6月24日00:00，即为小组赛前两轮32场比赛结束之后，同时在2014年6月24日00:00之前可对已经填写完成的预测结果进行修改，每张竞猜劵只可修改一次。
                         </div>
                     </div>
 
                     <div class="qa-item">
-                        <a href="javascript:void(null)">3、竞猜劵获取方式是什么？</a>
+                        <a href="javascript:void(null)">3、Q：每个人的竞猜券有限额么？我可以都填一样的内容吗？</a>
                         <div class="qa-answer">
+                            A： 每张竞猜劵均有自己的提交时间，竞猜劵如有修改则以修改时间作为最终提交时间，每张竞猜劵预测结果可以相同，每个注册用户最多可获得并填写10张竞猜劵；
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <a href="javascript:void(null)">4、Q：怎样能得到竞猜券呢？</a>
+                        <div class="qa-answer">
+                            <p>A：</p>
                             <p>
                                 <em>a)</em>
                                 <span>安装APP后首次登录或注册暴风用户可自动获得一张竞猜劵；</span>
@@ -50,8 +53,7 @@
                             </p>
                             <p>
                                 <em>c)</em>
-                                <span>通过推荐好友安装“百万世界杯”APP后获得竞猜劵。
-                                iOS和Android版本每推荐一个好友成功新安装一个APP自己和好友均可多获得一张竞猜劵；</span>
+                                <span>通过推荐好友安装“百万世界杯”APP后获得竞猜劵。iOS和Android版本每推荐一个好友成功新安装一个APP自己和好友均可多获得一张竞猜劵；</span>
                             </p>
                             <p>
                                 <em>d)</em>
@@ -61,8 +63,9 @@
                     </div>
 
                     <div class="qa-item">
-                        <a href="javascript:void(null)">4、竞猜获奖规则是什么？</a>
+                        <a href="javascript:void(null)">5、Q： 怎么样才能得奖呢？</a>
                         <div class="qa-answer">
+                            <p>A：</p>
                             <p>
                                 <em>a)</em>
                                 <span>每场比赛预测正确的标准为参赛双方的队伍及获胜队伍三者均全部符合，有任何一个条件不满足既认为不正确，例如参赛双方正确但比赛结果不对，或者参赛双方中有一方与预测不一致，则即使最终获胜队与预测一致也不算正确；</span>
@@ -75,9 +78,9 @@
                     </div>
 
                     <div class="qa-item">
-                        <a href="javascript:void(null)">5、奖金是多少啊？</a>
+                        <a href="javascript:void(null)">6、Q：如果不止一人猜对呢？奖金怎么分？</a>
                         <div class="qa-answer">
-                            <p>如果预测正确数量最高者为一人则独揽全部百万奖金，如果预测正确数据最高者为多人则结合竞猜劵的提交时间分配百万现金，分配规则为： </p>
+                            <p>A：如果预测正确数量最高者为一人则独揽全部百万奖金，如果预测正确数据最高者为多人则结合竞猜劵的提交时间分配百万现金，分配规则为： </p>
                             <p>
                                 <em>a)</em>
                                 <span>提交时间分为三个阶段，第一阶段为2014年6月18日12:00之前，第一阶段结束后至2014年6月19日12:00之前为第二阶段，第二阶段结束之后至2014年6月23日12:00之前为第三阶段；</span>
@@ -88,7 +91,7 @@
                             </p>
                             <p>
                                 <em>c)</em>
-                                <span>如果用户拥有多张预测正确数据最高的竞猜劵，则将不同阶段的竞猜劵获得的奖金累加；</span>
+                                <span>如果用户拥有多张预测正确数据最高的竞猜劵，则将不同阶段的竞猜劵获得的奖金累加。</span>
                             </p>
                         </div>
                     </div>
@@ -96,32 +99,32 @@
 
                 </div>
                 <div class="qa-title">
-                    今日竞猜活动规则
+                    “单场竞猜”活动规则
                     <a class="toggle-slide-up" href="javascript:void(null)"></a>
                 </div>
                 <div class="qa-list">
                     <div class="qa-item">
-                        <a href="javascript:void(null)">1、怎样参加今日竞猜呢？</a>
+                        <a href="javascript:void(null)">1、Q：“单场竞猜“是怎么回事？</a>
                         <div class="qa-answer">
-                            用户可单独针对世界杯64场比赛的每一场比赛的结果进行预测，小组赛中每场比赛的预测类型为某只队伍获胜或者两只队伍打平，淘汰赛中只需预测哪只队伍获胜即可。每场比赛只能预测一次，不可修改；
+                            A：用户可单独针对世界杯64场比赛的每一场比赛的结果进行预测，小组赛中每场比赛的预测类型为某只队伍获胜或者两只队伍打平，淘汰赛中只需预测哪只队伍获胜即可。每场比赛只能预测一次，不可修改；
                         </div>
                     </div>
                     <div class="qa-item">
-                        <a href="javascript:void(null)">2、怎样获得更多抽奖机会呢？</a>
+                        <a href="javascript:void(null)">2、Q：怎么参加？怎样获得抽奖券？</a>
                         <div class="qa-answer">
-                            每场比赛在开赛前10分钟锁定预测，猜中某场比赛即可获得一张抽奖劵，也可通过推荐好友安装“百万世界杯“APP后或者下载并使用推荐的APP获得一张抽奖劵；
+                            A：每场比赛在开赛前10分钟锁定预测，猜中某场比赛即可获得一张抽奖劵，也可通过推荐好友安装“百万世界杯“APP后或者下载并使用推荐的APP获得一张抽奖劵；
                         </div>
                     </div>
                     <div class="qa-item">
-                        <a href="javascript:void(null)">3、抽奖券是做什么用的呢？</a>
+                        <a href="javascript:void(null)">3、Q：“今日竞猜“是怎么回事？都有哪些奖品？</a>
                         <div class="qa-answer">
-                            抽奖劵可用于参加“单场竞猜“中的”今日竞猜“的活动环节，在每晚的《XXX》直播节目中，从当日每场比赛对应的全部抽奖劵及昨日12:00至当日12:00之间通过推荐好友安装或者下载并使用APP获得的所有抽奖劵中随机抽取一个赞助商大奖，奖品为XXXX及100个”今晚看球零食包“奖；
+                            A：抽奖劵可用于参加“单场竞猜“中的”今日竞猜“的活动环节，在每晚的《XXX》直播节目中，从当日每场比赛对应的全部抽奖劵及昨日12:00至当日12:00之间通过推荐好友安装或者下载并使用APP获得的所有抽奖劵中随机抽取一个赞助商大奖，奖品为XXXX及100个”今晚看球零食包“奖；
                         </div>
                     </div>
                     <div class="qa-item">
-                        <a href="javascript:void(null)">4、怎样知道自己有没有获奖呢？</a>
+                        <a href="javascript:void(null)">4、Q：为什么系统中显示我中奖了，后来却被取消了领奖资格？</a>
                         <div class="qa-answer">
-                            获得“今日竞猜“活动环节中的赞助商大奖者必须在直播中接听电话才能领取，如果没有接听电话则重新抽取赞助商大奖；
+                            A： 获得“今日竞猜“活动环节中的赞助商大奖者必须在直播中接听电话才能领取，如果没有接听电话则重新抽取赞助商大奖；
                         </div>
                     </div>
                 </div>

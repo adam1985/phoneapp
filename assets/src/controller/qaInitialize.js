@@ -18,28 +18,23 @@ define(['jquery', './initializeScroll'], function($, initializeScroll){
 
 
             var qaTitle = $('.qa-title');
-            qaTitle.click( function(){
+            qaTitle.on('tap', function(){
                 var $this = $(this),
                     qaList = $this.next('.qa-list'),
                     isShow = qaList.is(':visible'),
                     toggleSlide = $this.find('a');
 
-                if( isShow ) {
-                    qaList.slideUp(function(){
-                        iscroll.refresh();
-                        setOffsetTop(this);
-                    });
-                    toggleSlide[0].className = 'toggle-slide-down';
-                } else {
-                    qaList.slideDown( function(){
-                        iscroll.refresh();
-                        setOffsetTop(this);
-                    });
-                    toggleSlide[0].className = 'toggle-slide-up';
-                }
+                qaList.slideToggle(function(){
+                    iscroll.refresh();
+                    setOffsetTop(this);
+                });
+
+                toggleSlide[0].className = isShow ? 'toggle-slide-down' : 'toggle-slide-up';
+
             });
 
-            $('.qa-item').find('a').click(function(){
+            $('.qa-item').on('tap', 'a', function(e){
+                e.stopPropagation();
                 $(this).next('.qa-answer').slideToggle( function(){
                     iscroll.refresh();
                     setOffsetTop(this);

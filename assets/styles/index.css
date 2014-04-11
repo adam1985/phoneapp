@@ -113,25 +113,42 @@ img{ vertical-align: middle;}
 
 /* 问答页面 */
 .qa-content, .disclaimer-content, .generalize-content{ top: 0; height: 100%;font-size: 15px;}
-.qa-title{padding:0 10px;  font-weight: bold; position: relative; cursor: pointer;}
+.qa-title{padding:0 10px;  font-weight: bold; position: relative; cursor: pointer;  }
 .qa-title a{
-    display: block; position: absolute; right: 15px; top: 50%; margin-top: -4px;
-    width:0;
-    height:0;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -4px;
+    width: 15px;
+    height: 15px;
     overflow:hidden;
     vertical-align:middle;
+    background: url(../images/up-icon.png) no-repeat center center;
 }
-.toggle-slide-up{ display: block; position: absolute; right: 15px; top: 50%; margin-top: -4px;
+.toggle-slide-up{
+    -webkit-transform:rotate(0deg);
+    transform:rotate(0deg);
+}
 
-    border-width:0 7px 7px 7px;
-    border-color:transparent transparent #dfdfdf transparent;
-    border-style:none dashed solid dashed;
-}
+/*.toggle-slide-down{
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg);
+}*/
 
 .toggle-slide-down{
-    border-width:7px 7px 0 7px;
-    border-color:#dfdfdf transparent transparent transparent;
-    border-style:solid dashed none dashed;
+    -webkit-transform:rotate(180deg);
+    -webkit-animation:animations 20s ease-out;
+
+    transform:rotate(180deg);
+    animation:animations 20s ease-out;
+}
+
+@-webkit-keyframes animations {
+    0%{transform:rotate(0deg)}
+    50%{transform:rotate(60deg)}
+    70%{transform:rotate(120deg)}
+    100%{transform:rotate(180deg)}
 }
 
 .qa-title{ height: 45px; line-height:45px; }
