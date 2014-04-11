@@ -28,7 +28,7 @@ img{ vertical-align: middle;}
 .layout-header-box h1{ margin: 0; color: #f1f1f1; text-shadow: none; font-size: 18px; font-weight: normal;}
 .layout-home-icon,.layout-goback-icon, .layout-goback-index{position: absolute; left: 0; cursor: pointer;}
 .layout-home-icon, .layout-home-icon a{display:block; height:40px;width:40px;}
-.layout-home-icon{  background: url(../images/home.png) no-repeat 10px center;}
+
 .layout-goback-icon , .layout-goback-index, .layout-goback-icon a, .layout-goback-index a {
     display:block; height:40px; width: 40px;
 }
@@ -43,7 +43,7 @@ img{ vertical-align: middle;}
 .layout-banner li{height: 30px; padding-left: 5px;width: 90%;}
 .layout-banner a{ color: #a8a37c; font-weight: normal;}
 .close-banner {background: url("../images/close-icon.png") no-repeat;cursor: pointer;
-    height: 20px;position: absolute;width: 20px; top: 50%; right: 5px; margin-top:-10px; background-size: 100% auto;}
+    height: 26px;position: absolute;width: 26px; top: 50%; right: 2px; margin-top:-13px; background-size: 100% auto;}
 .close-banner:hover{ background-image: url("../images/close-icon-on.png");  }
 /* 焦点图 */
 .focus-picture{ position: relative; height: 150px; overflow: hidden; }
