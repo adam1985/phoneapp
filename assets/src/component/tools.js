@@ -19,6 +19,34 @@ define(['jquery'], function($){
         return [];
     },
 
+    joinAssignSrc = function( data ){
+
+        (function(data){
+            var arg = arguments;
+            if($.isArray( data )){
+                $.each( data, function() {
+                    var self = this;
+                    if( self.aid ) {
+                        self.src += '#' + self.aid;
+                    } else if( self.player ) {
+                        var params = {
+                            assigntype : 'video',
+                            title : self.title
+                        };
+
+                        self.src += ( self.src.indexOf('?') == -1 ? '?' : '&' ) + $.param( params );
+                    }
+                    if( self.list && $.isArray( self.list ) ) {
+                        arg.callee( self.list );
+                    }
+                });
+            }
+
+        }(data));
+
+        return data;
+    },
+
     // 判断浏览器是否为webkit
     isWebkit = (function() {
         return document.body.style.WebkitBoxShadow !== undefined;
@@ -26,7 +54,8 @@ define(['jquery'], function($){
 
     return {
         subToArray : subToArray,
-        isWebkit : isWebkit
+        isWebkit : isWebkit,
+        joinAssignSrc: joinAssignSrc
     };
 
 });

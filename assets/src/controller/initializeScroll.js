@@ -10,7 +10,7 @@ define( ['jquery',  'component/iscroll',  'component/tools'],
 
             config = config || {};
             config = $.extend({
-                scrollbarClass: tools.isWebkit ?  'myScrollbar' : false,
+                scrollbarClass: 'myScrollbar',
                 useTransition: false,
                 hideScrollbar: true,
                 zoom: true,

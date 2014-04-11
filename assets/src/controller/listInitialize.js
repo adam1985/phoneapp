@@ -1,5 +1,5 @@
-define(['jquery', 'component/template', './pullDownUpLoad', 'conf/config'],
-    function($, template, pullDownUpLoad, config){
+define(['jquery', 'component/template', './pullDownUpLoad', 'component/tools', 'conf/config'],
+    function($, template, pullDownUpLoad, tools, config){
 
         return function( complete ){
 
@@ -31,6 +31,7 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'conf/config'],
                                 $.mobile.loading('hide');
                                 var newsListsContainer = $('#news-lists-container');
                                 if( data ) {
+                                    data = tools.joinAssignSrc( data );
                                     var templateStr = template.render('news-lists-template', {
                                         list : data
                                     });
@@ -51,9 +52,9 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'conf/config'],
                                     dataType: 'jsonp',
                                     jsonpCallback : 'newsListsCallBack',
                                     success: function( res ){
-                                        if( res ) {
+                                        if( res.length >>> 0 ) {
                                             pageIndex = data.latestPage;
-
+                                            res = tools.joinAssignSrc( res );
                                             var newsListsContainer = $('#news-lists-container');
                                             var templateStr = template.render('news-lists-template', {
                                                 list : res
@@ -74,6 +75,7 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'conf/config'],
                                         success: function( data ){
                                             var newsListsContainer = $('#news-lists-container');
                                             if( data.length >>> 0) {
+                                                data = tools.joinAssignSrc( data );
                                                 var templateStr = template.render('news-lists-template', {
                                                     list : data
                                                 });

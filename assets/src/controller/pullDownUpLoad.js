@@ -28,7 +28,7 @@ define( ['jquery',  'component/iscroll',  'component/tools'],
                     useTransition: false,
                     topOffset: pullDownOffset,
                     hideScrollbar: true,
-                    scrollbarClass: tools.isWebkit ?  'myScrollbar' : false,
+                    scrollbarClass: 'myScrollbar',
                     onRefresh: function () {
                         if (pullDownEl.className.match('loading')) {
                             pullDownEl.className = '';

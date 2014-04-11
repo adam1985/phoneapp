@@ -10,6 +10,10 @@ a:hover{text-decoration:none;}
 html, body, .wrapper{overflow: hidden !important; height: 100%;}
 body{font-family: "微软雅黑", "宋体" , Arial, Helvetica, sans-serif; margin: 0; padding: 0;-webkit-user-select: none; -moz-user-select: none;   }
 img{ vertical-align: middle;}
+.ui-page-theme-a a:active, html .ui-bar-a a:active, html .ui-body-a a:active, html body .ui-group-theme-a a:active {
+    color: #5ce5b5;
+}
+
 .wrapper{ height: 100%; width: 100%;}
 .hide{ display: none;}
 .show, .block{ display: block;}
@@ -22,14 +26,15 @@ img{ vertical-align: middle;}
 .layout-header{ height: 40px; line-height: 40px; background: #1c8a64; top:0; }
 .layout-header-box{ text-align: center; position: relative; height: 100%;}
 .layout-header-box h1{ margin: 0; color: #f1f1f1; text-shadow: none; font-size: 18px; font-weight: normal;}
-.layout-home-icon,.layout-goback-icon, .layout-goback-index{position: absolute; left: 0;}
+.layout-home-icon,.layout-goback-icon, .layout-goback-index{position: absolute; left: 0; cursor: pointer;}
 .layout-home-icon, .layout-home-icon a{display:block; height:40px;width:40px;}
 .layout-home-icon{  background: url(../images/home.png) no-repeat 10px center;}
 .layout-goback-icon , .layout-goback-index, .layout-goback-icon a, .layout-goback-index a {
     display:block; height:40px; width: 40px;
 }
 
-.layout-goback-icon, .layout-goback-index{ background: url(../images/goback.png) no-repeat 10px center;}
+.layout-goback-icon, .layout-goback-index{ background: url(../images/title_bar_left.png) no-repeat 0 center;}
+.layout-goback-icon:hover, .layout-goback-index:hover{ opacity: .5; }
 
 /* 页面banner区　*/
 .layout-banner-box{ position: relative;}
@@ -37,8 +42,9 @@ img{ vertical-align: middle;}
 .layout-banner li, .layout-banner ul{ list-style: none; padding: 0; margin: 0; }
 .layout-banner li{height: 30px; padding-left: 5px;width: 90%;}
 .layout-banner a{ color: #a8a37c; font-weight: normal;}
-.close-banner {background: url("../images/original/close.png") no-repeat;cursor: pointer;height: 20px;margin-top: -10px;position: absolute;right: 5px;top: 50%;width: 20px;}
-
+.close-banner {background: url("../images/close-icon.png") no-repeat;cursor: pointer;
+    height: 20px;position: absolute;width: 20px; top: 50%; right: 5px; margin-top:-10px; background-size: 100% auto;}
+.close-banner:hover{ background-image: url("../images/close-icon-on.png");  }
 /* 焦点图 */
 .focus-picture{ position: relative; height: 150px; overflow: hidden; }
 .focus-picture-box{  height:auto;overflow:hidden;}
@@ -179,3 +185,4 @@ border-radius:30px; text-align: center; text-shadow: none; font-size: 18px; font
 .activity-content{ font-size: 16px;}
 .activity-content h4{ color: #2da67b; margin-bottom: 0;}
 .activity-content p{ text-indent: 2em; margin: 5px 0;}
+

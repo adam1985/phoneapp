@@ -35,6 +35,10 @@ define(['jquery', 'component/template', './initializeScroll', 'component/jquery.
                         }
                     });
 
+                    $(document).on('touchstart', function(){
+                        iscroll.refresh();
+                    });
+
                 },
                 error : function(){
                     alert('文章数据格式可能有误，请检查文章内容中换行是否加了\\换行符!');
@@ -42,10 +46,11 @@ define(['jquery', 'component/template', './initializeScroll', 'component/jquery.
             });
 
             // 返回上一页
-            $('.layout-goback-icon').click(function(){
+            /*$('.layout-goback-icon').click(function(e){
+                e.preventDefault();
                 history.go(-1);
-                //window.close();
-            });
+                return false;
+            });*/
 
         };
 

@@ -39,6 +39,7 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                 success: function( data ){
                                     var focusPicture = $('#focus-picture');
                                     if( data.length >>> 0) {
+                                        data = tools.joinAssignSrc( data );
                                         var templateStr = template.render('focus-template', {
                                             list : tools.subToArray(data, 6, true)
                                         });
@@ -56,6 +57,7 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                 success: function( data ){
                                     var newsListContainer = $('#news-list-container');
                                     if( data.length >>> 0) {
+                                        data = tools.joinAssignSrc( data );
                                         var templateStr = template.render('hot-news-template', {
                                             list : data
                                         });
@@ -132,6 +134,7 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                             pageIndex = data.latestPage;
                                             var newsListContainer = $('#news-list-container');
                                             if( res.length >>> 0) {
+                                                res = tools.joinAssignSrc( res );
                                                 var templateStr = template.render('hot-news-template', {
                                                     list : res
                                                 });
@@ -151,6 +154,7 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                             success: function( data ){
                                                 var newsListContainer = $('#news-list-container');
                                                 if( data.length >>> 0) {
+                                                    data = tools.joinAssignSrc( data );
                                                     var templateStr = template.render('hot-news-template', {
                                                         list : data
                                                     });
