@@ -49,7 +49,11 @@ define(['jquery'], function($){
 
     // 判断浏览器是否为webkit
     isWebkit = (function() {
-        return document.body.style.WebkitBoxShadow !== undefined;
+        var UA = navigator.userAgent.toLowerCase(), _isWebkit = false;
+        if (/webkit/i.test(UA)) {
+            _isWebkit = true;
+        }
+        return _isWebkit;
     }());
 
     return {
