@@ -1,11 +1,11 @@
-define(['jquery', 'component/template', './initializeScroll', 'component/jquery.lazyload', 'conf/config'],
-    function($, template, initializeScroll, lazyload, config){
+define(['jquery', 'component/template', './initializeScroll', 'component/jquery.lazyload', 'component/jquery.uri', 'conf/config'],
+    function($, template, initializeScroll, lazyload, uri, config){
         return function( complete ){
 
-            var hash = location.hash.substr(1);
+            var aid = $.uri( location.href ).at('query').aid;
 
             $.ajax({
-                url: config.base + 'data/article/' + hash + '.js',
+                url: config.base + 'data/article/' + aid + '.js',
                 dataType: 'jsonp',
                 jsonpCallback : 'articleCallBack',
                 beforeSend : function() {
@@ -23,7 +23,11 @@ define(['jquery', 'component/template', './initializeScroll', 'component/jquery.
 
                     complete && complete();
 
-                    var iscroll = initializeScroll();
+                    var iscroll = initializeScroll({
+                        onScrollStart : function(){
+                            iscroll.refresh();
+                        }
+                    });
 
                     layoutArticle.find('img').lazyload({
                         container: $('.layout-content'),

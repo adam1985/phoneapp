@@ -2,12 +2,11 @@ define(['jquery', './initializeScroll'], function($, initializeScroll){
     return function() {
             var iscroll = initializeScroll({
                 zoom: false,
-                wheelAction : null
+                wheelAction : null,
+                onBeforeScrollMove : null,
+                onScrollStart : function(){
+                    //iscroll.refresh();
+                }
             });
-
-        $(window).on('load', function(){
-            iscroll.refresh();
-        });
-
     };
 });

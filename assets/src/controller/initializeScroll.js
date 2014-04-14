@@ -36,7 +36,7 @@ define( ['jquery',  'component/iscroll',  'component/tools'],
             return iscroll;
         };
 
-        $(window).on('orientationchange, resize, window', setTouchScroll);
+        $(window).on('orientationchange, resize', setTouchScroll);
 
         return setTouchScroll();
     };

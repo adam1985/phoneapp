@@ -4,7 +4,11 @@ define(['jquery', './initializeScroll'], function($, initializeScroll){
 
             var iscroll = initializeScroll({
                 zoom: false,
-                wheelAction : null
+                wheelAction : null,
+                onBeforeScrollMove : null,
+                onScrollStart : function(){
+                    //iscroll.refresh();
+                }
             });
 
             var setOffsetTop = function( obj ) {
@@ -40,6 +44,8 @@ define(['jquery', './initializeScroll'], function($, initializeScroll){
                     setOffsetTop(this);
                 });
             });
+
+
     };
 
 });

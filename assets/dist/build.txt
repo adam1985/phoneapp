@@ -13,6 +13,7 @@ component/tools.js
 controller/pullDownUpLoad.js
 conf/config.js
 controller/indexInitialize.js
+component/jquery.uri.js
 controller/listInitialize.js
 controller/initializeScroll.js
 component/jquery.lazyload.js

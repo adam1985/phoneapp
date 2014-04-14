@@ -112,7 +112,7 @@ img{ vertical-align: middle;}
 
 
 /* 问答页面 */
-.qa-content, .disclaimer-content, .generalize-content{ top: 0; height: 100%;font-size: 15px;}
+.qa-content, .disclaimer-content, .generalize-content{ top: 0; height: 100% !important;font-size: 15px; position: static;}
 .qa-title{padding:0 10px;  font-weight: bold; position: relative; cursor: pointer;  }
 .qa-title a{
     display: block;

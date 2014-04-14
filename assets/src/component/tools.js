@@ -27,7 +27,7 @@ define(['jquery'], function($){
                 $.each( data, function() {
                     var self = this;
                     if( self.aid ) {
-                        self.src += '#' + self.aid;
+                        self.src += '?aid=' + self.aid;
                     } else if( self.player ) {
                         var params = {
                             assigntype : 'video',

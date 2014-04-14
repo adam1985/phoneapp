@@ -1,12 +1,13 @@
-define(['jquery', 'component/template', './pullDownUpLoad', 'component/tools', 'conf/config'],
-    function($, template, pullDownUpLoad, tools, config){
+define(['jquery', 'component/template', './pullDownUpLoad', 'component/jquery.uri',  'component/tools', 'conf/config'],
+    function($, template, pullDownUpLoad, uri, tools, config){
 
         return function( complete ){
 
-            var hash = location.hash.substr(1);
+            var category = $.uri( location.href ).at('query').category;
+
 
             $.ajax({
-                url: config.base + 'data/list/' + hash + '/list-conf.js',
+                url: config.base + 'data/list/' + category + '/list-conf.js',
                 dataType: 'jsonp',
                 jsonpCallback : 'listConfCallBack',
                 beforeSend : function() {
@@ -24,7 +25,7 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'component/tools', '
                         $('#news-lists-title').html( templateStr );
 
                         var dtd = $.ajax({
-                            url: config.base + 'data/list/' + hash + '/' + data.newsSource + data.latestPage +  '.js',
+                            url: config.base + 'data/list/' + category + '/' + data.newsSource + data.latestPage +  '.js',
                             dataType: 'jsonp',
                             jsonpCallback : 'newsListsCallBack',
                             success: function( data ){
@@ -48,7 +49,7 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'component/tools', '
 
                             pullDownUpLoad(function(myScroll){
                                 $.ajax({
-                                    url: config.base + 'data/list/' + hash + '/' + data.newsSource + data.latestPage +  '.js',
+                                    url: config.base + 'data/list/' + category + '/' + data.newsSource + data.latestPage +  '.js',
                                     dataType: 'jsonp',
                                     jsonpCallback : 'newsListsCallBack',
                                     success: function( res ){
@@ -69,7 +70,7 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'component/tools', '
                                 --pageIndex;
                                 if( pageIndex > 0 ) {
                                     $.ajax({
-                                        url: config.base + 'data/list/' + hash + '/' + data.newsSource + pageIndex + '.js',
+                                        url: config.base + 'data/list/' + category + '/' + data.newsSource + pageIndex + '.js',
                                         dataType: 'jsonp',
                                         jsonpCallback : 'newsListsCallBack',
                                         success: function( data ){
@@ -98,3 +99,6 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'component/tools', '
 
         };
 });
+
+
+

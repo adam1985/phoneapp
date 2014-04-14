@@ -171,9 +171,10 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
 
 
                                 firstFocusImgs.on('load', function() {
-                                    focusPictrue.height( this.height );
+                                    focusPictrue.height( 'auto' );
                                     myScroll.refresh();
                                 });
+
 
                                 $(document).on('touchstart', function(){
                                     myScroll.refresh();
