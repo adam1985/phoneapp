@@ -1,6 +1,6 @@
 define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider',
-    'component/superMarquee', './pullDownUpLoad', 'component/tools', 'conf/config'],
-    function($, mobile, template, TouchSlider, superMarquee, pullDownUpLoad, tools, config){
+    'component/superMarquee', './pullDownUpLoad', './playerVideo', 'component/tools', 'conf/config'],
+    function($, mobile, template, TouchSlider, superMarquee, pullDownUpLoad, playerVideo, tools, config){
 
         return function( complete ){
 
@@ -120,6 +120,8 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                 }
                             });
 
+                            playerVideo();
+
                             complete && complete();
 
                             $.when(renderBanner()).done(function(){
@@ -179,6 +181,8 @@ define(['jquery', 'jquery.mobile',  'component/template', 'component/touchslider
                                 $(document).on('touchstart', function(){
                                     myScroll.refresh();
                                 });
+
+
 
                             });
 

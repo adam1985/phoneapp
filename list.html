@@ -54,7 +54,7 @@
         {{ if( target.imgSrc ) { }}
         <div class="cl news-list-body">
             <div class="fl thumb-box">
-                <a href="{{= target.src }}" class="thumb">
+                <a href="{{= target.src }}" class="thumb" data-params="{{= target.videoState }}">
                     <img src="{{= target.imgSrc }}"/>
                     {{ if( target.player ) { }}
                     <span class="sprites video-play-btn"></span>
@@ -69,7 +69,7 @@
                             <div>
                                 {{ } }}
 
-                                <a class="atitle" href="{{= target.src }}">
+                                <a class="atitle" href="{{= target.src }}" data-params="{{= target.videoState }}">
                                     <h2>{{= target.title }}</h2>
                                     <p>
                                         {{= target.info }}

@@ -62,7 +62,7 @@
             var current = list[i];
         }}
             <div class="focus-picture-list">
-                <a href="{{= current.src }}">
+                <a href="{{= current.src }}" data-params="{{= current.videoState }}">
                     <img src="{{= current.imgSrc }}"/>
                 </a>
             </div>
@@ -74,9 +74,9 @@
                 var current = list[i];
             }}
                 {{ if( i === 0 ) { }}
-                    <a title="{{= current.title }}" href="{{= current.src }}" class="on">{{= current.title }}</a>
+                    <a title="{{= current.title }}" href="{{= current.src }}" class="on" data-params="{{= current.videoState }}">{{= current.title }}</a>
                 {{ } else { }}
-                    <a title="{{= current.title }}" href="{{= current.src }}">{{= current.title }}</a>
+                    <a title="{{= current.title }}" href="{{= current.src }}" data-params="{{= current.videoState }}">{{= current.title }}</a>
                 {{ } }}
             {{ } }}
         </div>
@@ -116,7 +116,7 @@
             {{ if( current.imgSrc ) { }}
             <div class="cl news-list-body">
                 <div class="fl thumb-box">
-                    <a href="{{= current.src }}" class="thumb">
+                    <a href="{{= current.src }}" class="thumb" data-params="{{= current.videoState }}">
                         <img src="{{= current.imgSrc }}"/>
                         {{ if( current.player ) { }}
                             <span class="sprites video-play-btn"></span>
@@ -130,7 +130,7 @@
                 <div class="news-content news-list-lace">
                     <div>
             {{ } }}
-                        <a class="atitle" href="{{= current.src }}">
+                        <a class="atitle" href="{{= current.src }}" data-params="{{= current.videoState }}">
                             <h2>{{= current.title }}</h2>
                             <p>
                                 {{= current.info }}

@@ -11,6 +11,7 @@ component/superMarquee.js
 component/iscroll.js
 component/tools.js
 controller/pullDownUpLoad.js
+controller/playerVideo.js
 conf/config.js
 controller/indexInitialize.js
 component/jquery.uri.js

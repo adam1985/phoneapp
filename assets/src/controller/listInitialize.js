@@ -1,5 +1,5 @@
-define(['jquery', 'component/template', './pullDownUpLoad', 'component/jquery.uri',  'component/tools', 'conf/config'],
-    function($, template, pullDownUpLoad, uri, tools, config){
+define(['jquery', 'component/template', './pullDownUpLoad', 'component/jquery.uri', './playerVideo', 'component/tools', 'conf/config'],
+    function($, template, pullDownUpLoad, uri, playerVideo, tools, config){
 
         return function( complete ){
 
@@ -45,6 +45,7 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'component/jquery.ur
                         });
 
                         $.when( dtd ).done( function(){
+                            playerVideo();
                             complete && complete();
 
                             pullDownUpLoad(function(myScroll){

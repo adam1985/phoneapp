@@ -25,7 +25,10 @@ define(['jquery'], function($){
             var arg = arguments;
             if($.isArray( data )){
                 $.each( data, function() {
-                    var self = this;
+                    var self = this,
+                        videoState = {
+                            isVideo : !!self.player
+                        };
                     if( self.aid ) {
                         self.src += '?aid=' + self.aid;
                     } else if( self.player ) {
@@ -34,8 +37,10 @@ define(['jquery'], function($){
                             title : self.title
                         };
 
-                        self.src += ( self.src.indexOf('?') == -1 ? '?' : '&' ) + $.param( params );
+                        self.videoSrc += ( self.videoSrc.indexOf('?') == -1 ? '?' : '&' ) + $.param( params );
+                        videoState.videoSrc = self.videoSrc;
                     }
+                    self.videoState = JSON.stringify( videoState );
                     if( self.list && $.isArray( self.list ) ) {
                         arg.callee( self.list );
                     }
