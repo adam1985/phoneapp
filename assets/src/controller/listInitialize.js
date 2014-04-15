@@ -99,6 +99,3 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'component/jquery.ur
 
         };
 });
-
-
-

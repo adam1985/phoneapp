@@ -23,14 +23,25 @@ define(['jquery', 'component/template', './initializeScroll', 'component/jquery.
 
                     complete && complete();
 
+                    var layoutContent = $('.layout-content');
+
                     var iscroll = initializeScroll({
+                        zoom: true,
+                        scrollX: true,
+                        scrollY: true,
+                        mouseWheel: true,
+                        wheelAction: 'zoom',
+                        onBeforeScrollMove : function(){
+                            layoutContent.trigger('scroll');
+                        },
                         onScrollStart : function(){
                             iscroll.refresh();
+                            layoutContent.trigger('scroll');
                         }
                     });
 
                     layoutArticle.find('img').lazyload({
-                        container: $('.layout-content'),
+                        container: layoutContent,
                         //effect      : 'fadeIn',
                         //event: "scroll",
                         "threshold": 200,

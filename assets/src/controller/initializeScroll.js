@@ -12,15 +12,7 @@ define( ['jquery',  'component/iscroll',  'component/tools'],
             config = $.extend({
                 scrollbarClass: 'myScrollbar',
                 useTransition: false,
-                hideScrollbar: true,
-                zoom: true,
-                scrollX: true,
-                scrollY: true,
-                mouseWheel: true,
-                wheelAction: 'zoom',
-                onBeforeScrollMove : function(){
-                    $('.layout-content').trigger('scroll');
-                }
+                hideScrollbar: true
             }, config);
 
             if( iscroll ) {
