@@ -1,10 +1,10 @@
-body{ width: 100%; height: 100%; background: url(../images/bg.png) repeat-x; color: #fff; padding-bottom: 50px;}
+body{ width: 100%; height: 100%; background: url(../images/bg.png) repeat-x #102d02; color: #fff; padding-bottom: 50px;}
 .fl{float:left;}
 .fr{float:right;}
 .cl{zoom:1;}
 .cl:after{content:"";display:block;height:0;clear:both;visibility:hidden}
 .ms-font{font-family: "微软雅黑", "黑体" , Arial, Helvetica, sans-serif; }
-.wrapper{ width: 100%; margin: auto; background: url(../images/max-banner.jpg) no-repeat center 0;padding-top: 430px;}
+.wrapper{ width: 100%; margin: auto; background: #102d02 url(../images/max-banner.jpg) no-repeat center 0;padding-top: 430px;}
 .layout-content{ margin: auto; width: 1196px;     }
 .layout-body{ padding-bottom: 40px;}
 .my-invite{ width: 700px; background: url("../images/repeat-x-bg.png") repeat-x 0 305px; padding-bottom: 50px; margin-left: -2px; }
@@ -58,7 +58,7 @@ body{ width: 100%; height: 100%; background: url(../images/bg.png) repeat-x; col
     line-height: 60px; background: url(../images/download.png) no-repeat; text-decoration: none;
 }
 .download-buttons a:hover{ text-decoration: underline;}
-.activity-intro{background: #0e2503; position: relative; }
+.activity-intro{background: #0e2503; position: relative;margin-bottom:30px; }
 
 .activity-intro h3{ font-size: 24px; height: 68px; line-height: 68px; background: #0f2207; padding-left: 110px;}
 .hot-ball{ width: 113px; height: 103px; position: absolute; left:-11px; top: -9px;

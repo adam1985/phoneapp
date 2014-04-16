@@ -5,7 +5,12 @@ define(['jquery'], function($){
             layoutContent.on('tap', 'a', function(e){
                 var $this = $(this),
                     isAppInstall = false,
-                    videoState = JSON.parse( $this.attr('data-params') );
+                    videoStateStr = $this.attr('data-params'),
+                    videoState = {};
+                    if( videoStateStr ) {
+                        videoState = JSON.parse( videoStateStr );
+                    }
+
                 if( videoState.isVideo ) {
                     e.preventDefault();
                     try{
