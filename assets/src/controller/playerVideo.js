@@ -1,36 +1,48 @@
 define(['jquery'], function($){
         return function(){
-                var layoutContent = $('.layout-content');
+                var layoutContent = $('.layout-content'),
+                    isAndroid = (/android/gi).test(navigator.appVersion),
+                    isIos = (/iphone|ipad/gi).test(navigator.appVersion);
 
             layoutContent.on('tap', 'a', function(e){
                 var $this = $(this),
                     isAppInstall = false,
-                    videoStateStr = $this.attr('data-params'),
-                    videoState = {};
-                    if( videoStateStr ) {
-                        videoState = JSON.parse( videoStateStr );
+                    assignTypeStr = $this.attr('data-params'),
+                    assignType = {};
+                    if( assignTypeStr ) {
+                        assignType = JSON.parse( assignTypeStr );
                     }
 
-                if( videoState.isVideo ) {
-                    e.preventDefault();
-                    try{
-                        isAppInstall = window.worldcup.isAppInstall();
-                    }catch(e){
-                        isAppInstall = false;
-                    }
+                    if( assignType.type === 'video' ) {
+                        e.preventDefault();
 
-                    if( isAppInstall ) {
-                        try{
-                            window.worldcup.onVideoDetected( videoState.videoSrc );
-                        }catch(e){
-                            window.open( this.href, '_blank');
+                        if ( isAndroid ) {
+
+                            try{
+                                isAppInstall = window.worldcup.isAppInstall();
+                            }catch(e){
+                                isAppInstall = false;
+                            }
+
+                            if( isAppInstall ) {
+                                try{
+                                    window.worldcup.onVideoDetected( assignType.mainUrl );
+                                }catch(e){
+                                    window.open( assignType.backUrl, '_blank');
+                                }
+                            } else {
+                                window.open( assignType.backUrl, '_blank');
+                            }
                         }
-                    } else {
-                        window.open( this.href, '_blank');
+
+                        if( isIos ) {
+
+                            var baseUrl = 'http://worldcup.hotnews/?info=';
+
+                            window.open( baseUrl + assignTypeStr , '_blank');
+                        }
+
                     }
-
-                }
-
             });
 
         };

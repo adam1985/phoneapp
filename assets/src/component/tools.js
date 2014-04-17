@@ -26,21 +26,20 @@ define(['jquery'], function($){
             if($.isArray( data )){
                 $.each( data, function() {
                     var self = this,
-                        videoState = {
-                            isVideo : !!self.player
+                        assignType = {
+                            type : 'article'
                         };
                     if( self.aid ) {
                         self.src += '?aid=' + self.aid;
                     } else if( self.player ) {
-                        var params = {
-                            assigntype : 'video',
-                            title : self.title
-                        };
-
-                        self.videoSrc += ( self.videoSrc.indexOf('?') == -1 ? '?' : '&' ) + $.param( params );
-                        videoState.videoSrc = self.videoSrc;
+                        videoState = $.extend( assignType, {
+                            type : 'video',
+                            message : self.title,
+                            mainUrl : self.videoSrc,
+                            backUrl : self.src
+                        });
                     }
-                    self.videoState = JSON.stringify( videoState );
+                    self.assignType = JSON.stringify( assignType );
                     if( self.list && $.isArray( self.list ) ) {
                         arg.callee( self.list );
                     }
