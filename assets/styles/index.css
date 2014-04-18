@@ -23,17 +23,17 @@ img{ vertical-align: middle;}
 .layout-header, .layout-content, .layout-footer{position:absolute;left:0; width:100%;}
 
 /* 页面头部　*/
-.layout-header{ height: 40px; line-height: 40px; background: #1c8a64; top:0; }
-.layout-header-box{ text-align: center; position: relative; height: 100%;}
-.layout-header-box h1{ margin: 0; color: #f1f1f1; text-shadow: none; font-size: 24px; font-weight: normal;}
+.layout-header{ height: 44px; line-height: 44px; background: #18aa78; top:0; font-family: "宋体", Arial, Helvetica, sans-serif;}
+.layout-header-box{position: relative; height: 100%;}
+.layout-header-box h1{ margin: 0 0 0 42px; color: #fff; text-shadow: none; font-size: 18px; font-weight: normal;}
 .layout-home-icon,.layout-goback-icon, .layout-goback-index{position: absolute; left: 0; cursor: pointer;}
-.layout-home-icon, .layout-home-icon a{display:block; height:40px;width:40px;}
+.layout-home-icon, .layout-home-icon a{display:block; height:44px;width:44px;}
 
 .layout-goback-icon , .layout-goback-index, .layout-goback-icon a, .layout-goback-index a {
-    display:block; height:40px; width: 40px;
+    display:block; height:44px; width: 44px;
 }
 
-.layout-goback-icon, .layout-goback-index{ background: url(../images/title_bar_left.png) no-repeat 0 center;}
+.layout-goback-icon, .layout-goback-index{ background: url(../images/title_bar_min.png) no-repeat 0 center;}
 .layout-goback-icon:hover, .layout-goback-index:hover{ opacity: .5; }
 
 /* 页面banner区　*/
@@ -61,7 +61,7 @@ img{ vertical-align: middle;}
 .focus-picture-buttons a.on{background: #fff;}
 
 /* 页面内容区 */
-.layout-content{ padding: 0; overflow: hidden; top:40px; bottom: 0; }
+.layout-content{ padding: 0; overflow: hidden; top:44px; bottom: 0; }
 .layout-item-content{ display: none;}
 .layout-content .active { display: block;}
 .news-list-box{ border-bottom: 1px solid #cbcbcb; padding: 8px 8px 0 8px;}
