@@ -85,9 +85,9 @@
                 var current = list[i];
             }}
                 {{ if( i === 0) { }}
-                    <a href="javascript:void(null)" class="on">{{= current.title }}</a>
+                    <a href="javascript:void(null)" class="on">{{= i + 1 }}</a>
                 {{ } else { }}
-                    <a href="javascript:void(null)">{{= current.title }}</a>
+                    <a href="javascript:void(null)">{{= i + 1 }}</a>
                 {{ } }}
             {{ } }}
         </div>

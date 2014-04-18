@@ -61,7 +61,7 @@ define(['jquery', 'component/template', './initializeScroll', 'component/jquery.
             });
 
             // 返回上一页
-            /*$('.layout-goback-icon').click(function(e){
+            /*$('.layout-goback-icon').on('tap', function(e){
                 e.preventDefault();
                 history.go(-1);
                 return false;

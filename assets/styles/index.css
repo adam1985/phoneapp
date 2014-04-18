@@ -57,7 +57,7 @@ img{ vertical-align: middle;}
 .focus-picture-titles a, .focus-picture-titles a:hover{ color: #fff;}
 .focus-picture-titles a.on{ display: block;}
 .focus-picture-buttons{ padding-right: 5px;}
-.focus-picture-buttons a{ float:left; vertical-align: middle; margin: 10px 3px;  display:block; height: 6px; width: 6px; background: #888882; text-indent: -9999em;}
+.focus-picture-buttons a{ float:left; vertical-align: middle; margin: 10px 3px;  display:block; height: 6px; width: 6px; background: #888882; text-indent: -9999px;}
 .focus-picture-buttons a.on{background: #fff;}
 
 /* 页面内容区 */
