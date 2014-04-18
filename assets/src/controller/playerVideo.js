@@ -38,10 +38,13 @@ define(['jquery'], function($){
                         if( isIos ) {
 
                             var baseUrl = 'http://worldcup.hotnews/?info=';
-
+                            // http://storm.baofeng.net/?c=
                             window.open( baseUrl + assignTypeStr , '_blank');
+
                         }
 
+                    } else if ( assignType.type === 'article' ) {
+                        location.href = assignType.src;
                     }
             });
 

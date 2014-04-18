@@ -176,8 +176,8 @@ img{ vertical-align: middle;}
 .install-apk{ }
 .install-apk h3{margin-bottom: 10px;}
 .install-apk p{ margin: 3px 0 0;}
-.quick-mark{box-sizing: border-box;  display:-webkit-box;display:-moz-box;display:-ms-box; display: box; width: 100%;}
-.quick-mark-item{box-sizing: border-box; padding: 0 15px; -webkit-box-flex:1;-moz-box-flex:1;-ms-box-flex:1;box-flex:1;}
+.quick-mark{ }
+.quick-mark-item{box-sizing: border-box; -moz-box-sizing: border-box;padding: 0 15px; width: 50%; float: left;}
 .quick-mark-item img,.quick-mark-item span{ display: block;}
 .quick-mark-item img{width: 100%;}
 .quick-mark-item span{ text-align: center; padding: 12px 0; color: #909090;}

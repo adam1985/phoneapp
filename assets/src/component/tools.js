@@ -8,57 +8,60 @@ define(['jquery'], function($){
      * @returns {array}
      */
     var subToArray = function ( data, size, isReverse ) {
-        if( $.isArray( data ) ) {
-            if( isReverse ) {
-                data.reverse();
-            }
-            return $.grep(data, function( n, i ){
-                return i < size;
-            });
-        }
-        return [];
-    },
-
-    joinAssignSrc = function( data ){
-
-        (function(data){
-            var arg = arguments;
-            if($.isArray( data )){
-                $.each( data, function() {
-                    var self = this,
-                        assignType = {
-                            type : 'article'
-                        };
-                    if( self.aid ) {
-                        self.src += '?aid=' + self.aid;
-                    } else if( self.player ) {
-                        videoState = $.extend( assignType, {
-                            type : 'video',
-                            message : self.title,
-                            mainUrl : self.videoSrc,
-                            backUrl : self.src
-                        });
-                    }
-                    self.assignType = JSON.stringify( assignType );
-                    if( self.list && $.isArray( self.list ) ) {
-                        arg.callee( self.list );
-                    }
+            if( $.isArray( data ) ) {
+                if( isReverse ) {
+                    data.reverse();
+                }
+                return $.grep(data, function( n, i ){
+                    return i < size;
                 });
             }
+            return [];
+        },
 
-        }(data));
+        joinAssignSrc = function( data ){
 
-        return data;
-    },
+            (function(data){
+                var arg = arguments;
+                if($.isArray( data )){
+                    $.each( data, function() {
+                        var self = this,
+                            assignType = {
+                                type : 'article'
+                            };
+                        if( self.aid ) {
+                            self.src += '?aid=' + self.aid;
+                            assignType = $.extend( assignType, {
+                                src : self.src
+                            });
+                        } else if( self.player ) {
+                            assignType = $.extend( assignType, {
+                                type : 'video',
+                                message : self.title,
+                                mainUrl : self.videoSrc,
+                                backUrl : self.src
+                            });
+                        }
+                        self.assignType = JSON.stringify( assignType );
+                        if( self.list && $.isArray( self.list ) ) {
+                            arg.callee( self.list );
+                        }
+                    });
+                }
+
+            }(data));
+
+            return data;
+        },
 
     // 判断浏览器是否为webkit
-    isWebkit = (function() {
-        var UA = navigator.userAgent.toLowerCase(), _isWebkit = false;
-        if (/webkit/i.test(UA)) {
-            _isWebkit = true;
-        }
-        return _isWebkit;
-    }());
+        isWebkit = (function() {
+            var UA = navigator.userAgent.toLowerCase(), _isWebkit = false;
+            if (/webkit/i.test(UA)) {
+                _isWebkit = true;
+            }
+            return _isWebkit;
+        }());
 
     return {
         subToArray : subToArray,

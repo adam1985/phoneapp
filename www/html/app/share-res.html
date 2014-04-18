@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="../../static/assets/app/styles/index.css"/>
     <script>
         (function(){
-            var sharePageUrl = 'http://worldcup.baofeng.com',
+            var sharePageUrl = '../pc/pc-share-res.html',
                 ispc = !((/android|iphone|ipad/gi).test(navigator.appVersion));
 
             if( ispc ) {
-                location.href = sharePageUrl;
+                //location.href = sharePageUrl;
             }
         }());
 
@@ -73,13 +73,13 @@
                         </div>
                         <div class="quick-mark-item">
                             <span>android</span>
-                            <img src="http://worldcup.baofeng.com/static/hot_report/img/quick-mark.jpg" />
+                            <img src="../../static/images/android-quick-mark.jpg" />
                         </div>
                     </div>
 
                     <div class="page-width download-apk">
-                        <a href="#">安卓版本下载</a>
                         <a href="#">ios版本下载</a>
+                        <a href="http://wx.dl.baofeng.com/mobile/WorldCup/WorldCup.apk">安卓版本下载</a>
                     </div>
                 </div>
 

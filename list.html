@@ -54,7 +54,7 @@
         {{ if( target.imgSrc ) { }}
         <div class="cl news-list-body">
             <div class="fl thumb-box">
-                <a href="{{= target.src }}" class="thumb" data-params="{{= target.assignType }}">
+                <a href="javascript:void(null)" class="thumb" data-params="{{= target.assignType }}">
                     <img src="{{= target.imgSrc }}"/>
                     {{ if( target.player ) { }}
                     <span class="sprites video-play-btn"></span>
@@ -69,7 +69,7 @@
                             <div>
                                 {{ } }}
 
-                                <a class="atitle" href="{{= target.src }}" data-params="{{= target.assignType }}">
+                                <a class="atitle" href="javascript:void(null)" data-params="{{= target.assignType }}">
                                     <h2>{{= target.title }}</h2>
                                     <p>
                                         {{= target.info }}
