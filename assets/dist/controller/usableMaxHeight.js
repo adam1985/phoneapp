@@ -1,1 +1,0 @@
-define([],function(){return function(e){var t=e(".layout-header:visible"),n=e(".layout-content:visible"),r=e(".layout-footer:visible"),i=document.documentElement.clientHeight-t.height()-r.height();n.height(i)}});
