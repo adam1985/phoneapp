@@ -4924,8 +4924,8 @@ img{ vertical-align: middle;}
 /* 页面详细页 */
 .layout-article{ padding: 0 10px 10px; }
 .layout-article h3{ margin: 5px 0 8px 0; color: #666; font-size: 18px;}
-.layout-article-pic img{ width: 100%;}
-.layout-article-content p{ font-size: 14px; line-height: 1.5em; text-indent: 2em;}
+.layout-article-pic img,.layout-article-content img{ width: 100%;  vertical-align: middle; margin: 5px 0;}
+.layout-article-content p{ font-size: 14px; line-height: 1.5em; /*text-indent: 2em;*/}
 
 
 /* 问答页面 */
