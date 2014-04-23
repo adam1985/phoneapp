@@ -42,13 +42,13 @@ define(['jquery', 'component/template', './initializeScroll', 'component/jquery.
 
                     layoutArticle.find('img').lazyload({
                         container: layoutContent,
-                        effect      : 'fadeIn',
+                        //effect      : 'fadeIn',
+                        //event: "scroll",
                         "threshold": 200,
                         load : function(){
                             iscroll.refresh();
                         }
                     });
-
 
                     $(document).on('touchstart', function(){
                         iscroll.refresh();

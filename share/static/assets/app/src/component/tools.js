@@ -54,7 +54,7 @@ define(['jquery'], function ($) {
             return data;
         },
 
-        // 判断浏览器是否为webkit
+    // 判断浏览器是否为webkit
         isWebkit = (function () {
             var UA = navigator.userAgent.toLowerCase(), _isWebkit = false;
             if (/webkit/i.test(UA)) {
@@ -63,13 +63,17 @@ define(['jquery'], function ($) {
             return _isWebkit;
         }());
 
-        isAndroid = (function(){
-            return (/android/gi).test(navigator.appVersion);
-        }());
+    isAndroid = (function(){
+        return (/android/gi).test(navigator.appVersion);
+    }());
 
-        isIos = (function(){
-                return (/iphone|ipad/gi).test(navigator.appVersion);
-        }());
+    isIos = (function(){
+        return (/iphone|ipad/gi).test(navigator.appVersion);
+    }());
+
+    isPC = (function(){
+        return !((/android|iphone|ipad/gi).test(navigator.appVersion));
+    }());
 
 
     return {
@@ -77,7 +81,8 @@ define(['jquery'], function ($) {
         isWebkit: isWebkit,
         joinAssignSrc: joinAssignSrc,
         isAndroid: isAndroid,
-        isIos : isIos
+        isIos : isIos,
+        isPC: isPC
     };
 
 });

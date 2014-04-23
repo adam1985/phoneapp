@@ -1,8 +1,8 @@
-define(['jquery', 'component/tools'], function($, tools){
+define(['jquery'], function($){
         return function(){
                 var layoutContent = $('.layout-content'),
-                    isAndroid = tools.isAndroid,
-                    isIos = tools.isIos;
+                    isAndroid = (/android/gi).test(navigator.appVersion),
+                    isIos = (/iphone|ipad/gi).test(navigator.appVersion);
 
             layoutContent.on('tap', 'a', function(e){
                 var $this = $(this),
