@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         //合并css任务
         concat: {
             css: {
-                src: ['./assets/styles/mobile/jquery.mobile-1.4.2.css', './assets/styles/scrollbar.css', './assets/styles/index.css'],
+                src: ['./assets/styles/jquery.mobile-1.4.2.css', './assets/styles/scrollbar.css', './assets/styles/index.css'],
                 dest: './assets/styles/index.all.css'
             }
         },
@@ -14,33 +14,35 @@ module.exports = function (grunt) {
         // 压缩css任务
         cssmin: {
             css: {
-                files: [{
-                    src : '<%= concat.css.dest %>',
-                    dest: './assets/styles/index.min.css'
-                }]
+                files: [
+                    {
+                        src: '<%= concat.css.dest %>',
+                        dest: './assets/styles/index.min.css'
+                    }
+                ]
             }
         },
 
         requirejs: {
-          compile: {
-            options: {
-                "baseUrl": "assets/src",
-                "paths": {
-                    "jquery": "jquery/jquery",
-                    "jquery.mobile": "mobile/jquery.mobile"
-                },
-                "shim": {
-                    //"touchslider": ["jquery", "jquery.mobile"]
-                },
-                //"dir": "assets/dist",
-                "removeCombined": true,
-                "preserveLicenseComments": false,
-                "cssImportIgnore": null,
-                "optimizeCss": "standard",
-                "name": "controller/index",
-                "out": "assets/dist/index.js"
+            compile: {
+                options: {
+                    "baseUrl": "assets/src",
+                    "paths": {
+                        "jquery": "jquery/jquery",
+                        "jquery.mobile": "mobile/jquery.mobile"
+                    },
+                    "shim": {
+                        //"touchslider": ["jquery", "jquery.mobile"]
+                    },
+                    //"dir": "assets/dist",
+                    "removeCombined": true,
+                    "preserveLicenseComments": false,
+                    "cssImportIgnore": null,
+                    "optimizeCss": "standard",
+                    "name": "controller/index",
+                    "out": "assets/dist/index.js"
+                }
             }
-          }
         },
 
         // watch任务
@@ -49,12 +51,12 @@ module.exports = function (grunt) {
                 livereload: true,
                 interrupt: true,
                 nospawn: true,
-                atBegin : true
+                atBegin: true
             },
-			css: {
-					files: ['./assets/styles/*.css'],
-					tasks: ['concat', 'cssmin']
-			}
+            css: {
+                files: ['./assets/styles/*.css'],
+                tasks: ['concat', 'cssmin']
+            }
         }
 
     });
@@ -84,4 +86,6 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['concat', 'cssmin', 'build']);
 
 };
+
+
 

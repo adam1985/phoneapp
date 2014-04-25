@@ -1,5 +1,3 @@
-@import "mobile/jquery.mobile-1.4.2.min.css";
-@import "scrollbar.css";
 .fl{float:left;}
 .fr{float:right;}
 .cl{zoom:1;}
@@ -25,7 +23,7 @@ img{ vertical-align: middle;}
 /* 页面头部　*/
 .layout-header{ height: 44px; line-height: 44px; background: #18aa78; top:0; font-family: "宋体", Arial, Helvetica, sans-serif;}
 .layout-header-box{position: relative; height: 100%;}
-.layout-header-box h1{ margin: 0 0 0 42px; color: #fff; text-shadow: none; font-size: 18px; font-weight: normal;}
+.layout-header-box h1{ margin: 0 0 0 42px; color: #fff; text-shadow: none; font-size: 18px; font-weight: normal; display: none;}
 .layout-home-icon,.layout-goback-icon, .layout-goback-index{position: absolute; left: 0; cursor: pointer;}
 .layout-home-icon, .layout-home-icon a{display:block; height:44px;width:44px;}
 
@@ -46,9 +44,9 @@ img{ vertical-align: middle;}
     height: 26px;position: absolute;width: 26px; top: 50%; right: 2px; margin-top:-13px; background-size: 100% auto;}
 .close-banner:hover{ background-image: url("../images/close-icon-on.png");  }
 /* 焦点图 */
-.focus-picture{ position: relative; height: 150px; overflow: hidden; }
+.focus-picture{ position: relative; min-height: 150px; height: 150px; overflow: hidden; }
 .focus-picture-box{  height:auto;overflow:hidden;}
-.focus-picture-list{ height:100%;}
+.focus-picture-list{ height:100%; }
 .focus-picture,.focus-picture-box,.focus-picture-list,.focus-picture-list img{width: 100%;}
 .focus-picture-list img{vertical-align: middle;}
 .focus-picture-control{ height: 25px; line-height: 25px; position: absolute; bottom: 0; width: 100%;}

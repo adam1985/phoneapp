@@ -2,11 +2,16 @@ define(['jquery',   'component/fastclick', 'component/tools'], function($, FastC
         return function() {
             FastClick.attach(document.body);
 
+            var title = $('.layout-header').find('h1');
+
             if( tools.isIos ) {
-                $('.layout-header').find('h1').css({
-                    margin : 'auto',
+                title.css({
+                    'margin' : 'auto',
                     'text-align': 'center'
-                })
+                });
             }
+
+            title.show();
+
         };
 });
