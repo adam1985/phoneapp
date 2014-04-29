@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0;">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>火热战报</title>
     <link rel="stylesheet" href="assets/styles/index.min.css"/>
-    <script src="assets/require.min.js" data-main="assets/src/controller/index"></script>
+    <script src="assets/require.min.js" data-main="assets/dist/index"></script>
 </head>
 <body>
-<div class="wrapper" data-role="page" id="index-page" data-title="火热战报">
+<div class="wrapper" data-role="page" id="index-page">
     <div class="layout-header">
         <div class="layout-header-box">
             <!--<div class="layout-home-icon"><a href="#"></a></div>-->
@@ -24,7 +25,7 @@
             <div class="scroller-box" id="scroller-box">
                 <div class="page-width layout-banner-box" id="layout-banner-box"></div>
 
-                <div class="page-width focus-picture" id="focus-picture"></div>
+                <div class="page-width focus-picture swiper-container" id="focus-picture"></div>
 
                 <div id="news-list-container">
 
@@ -57,11 +58,11 @@
 <!-- 焦点图模板 -->
 <script id="focus-template" type="text/html">
     {{ if( list.length >>> 0 ){ }}
-    <div class="cl focus-picture-box" id="focus-picture-box">
+    <div class="cl focus-picture-box swiper-wrapper" id="focus-picture-box">
         {{ for ( var i = 0, len = list.length; i < len; i++ ) {
             var current = list[i];
         }}
-            <div class="focus-picture-list">
+            <div class="focus-picture-list swiper-slide">
                 <a href="javascript:void(null)" data-params="{{= current.assignType }}">
                     <img src="{{= current.imgSrc }}"/>
                 </a>
@@ -103,7 +104,7 @@
     }}
     <div class="news-list-box">
         <div class="sprites news-list-header">
-            <a class="category" href="javascript:void(null)">{{= target.title }}</a>
+            <a class="category" href="{{= target.src }}?category={{= target.type }}">{{= target.title }}</a>
         </div>
 
         {{ if( target.list.length >>> 0 ) {

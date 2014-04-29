@@ -1,11 +1,7 @@
-define(['jquery', 'jquery.mobile', './commonInitialize',  './indexInitialize',  './listInitialize',
+define(['jquery', 'jquery.mobile',  './commonInitialize',  './indexInitialize',  './listInitialize',
     './articleInitialize', './qaInitialize',  './commonIscroll'],
     function($, mobile, commonInitialize, indexInitialize, listInitialize,
              articleInitialize, qaInitialize, commonIscroll){
-
-        $.extend( $.mobile, {
-            ajaxEnabled: false
-        });
 
         $(function(){
 

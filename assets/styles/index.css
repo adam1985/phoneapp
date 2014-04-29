@@ -46,7 +46,7 @@ img{ vertical-align: middle;}
 /* 焦点图 */
 .focus-picture{ position: relative; min-height: 150px; height: 150px; overflow: hidden; }
 .focus-picture-box{  height:auto;overflow:hidden;}
-.focus-picture-list{ height:100%; }
+.focus-picture-list{ height:100%;  }
 .focus-picture,.focus-picture-box,.focus-picture-list,.focus-picture-list img{width: 100%;}
 .focus-picture-list img{vertical-align: middle;}
 .focus-picture-control{ height: 25px; line-height: 25px; position: absolute; bottom: 0; width: 100%;}
@@ -86,21 +86,7 @@ img{ vertical-align: middle;}
 
 /* 底部导航栏 */
 .layout-footer{ bottom: 0; height: 0;}
-.layout-footer-nav{ background: #278f6b; padding: 7px 0;}
-.layout-footer-nav ul, .layout-footer-nav li{margin: 0; padding: 0;}
-.layout-footer-nav li{ float: left; width: 25%; list-style: none; text-shadow: none; text-align: center;}
-.layout-footer-nav i, .layout-footer-nav span{ display: block; }
-.layout-footer-nav a{color: #31cd97;font-weight: normal; font-size: 12px;}
-.layout-footer-nav a.active,  .layout-footer-nav a:hover{ color: #ffde00; }
-.layout-footer-nav i{ width: 20px; height: 20px; margin: auto;}
-.nav-item1 i{ background-position: 0 0;}
-.nav-item2 i{ background-position: 0 -20px;}
-.nav-item3 i{ background-position: 0 -40px;}
-.nav-item4 i{ background-position: 0 -60px;}
-.nav-item1 a.active i, .nav-item1 a:hover i {background-position: 0 -80px;}
-.nav-item2 a.active i, .nav-item2 a:hover i {background-position: 0 -100;}
-.nav-item3 a.active i, .nav-item3 a:hover i {background-position: 0 -120px;}
-.nav-item4 a.active i, .nav-item4 a:hover i {background-position: 0 -140px;}
+
 
 /* 页面详细页 */
 .layout-article{ padding: 0 10px 10px; }
@@ -192,3 +178,23 @@ border-radius:30px; text-align: center; text-shadow: none; font-size: 18px; font
 .activity-content h4{ color: #2da67b; margin-bottom: 0;}
 .activity-content p{ text-indent: 2em; margin: 5px 0;}
 
+/* loading效果　*/
+
+.ajax-loading {
+    width: 48px;
+    height: 48px;
+    background: url(../images/loading.png) no-repeat;
+    background-position:0 100%;
+    -webkit-transform:rotate(0deg) translateZ(0);
+    -webkit-transition-duration:0ms;
+
+    -webkit-animation-name:loading;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+    from { -webkit-transform:rotate(0deg) translateZ(0); }
+    to { -webkit-transform:rotate(360deg) translateZ(0); }
+}

@@ -1,9 +1,11 @@
-define(['jquery', 'component/template', './pullDownUpLoad', 'component/jquery.uri', './playerVideo', 'component/tools', 'conf/config'],
-    function($, template, pullDownUpLoad, uri, playerVideo, tools, config){
+define(['jquery', 'component/template',   'component/loading', './pullDownUpLoad', 'component/jquery.uri', './playerVideo', 'component/tools', 'conf/config'],
+    function($, template, loading, pullDownUpLoad, uri, playerVideo, tools, config){
 
         return function( complete ){
 
             var category = $.uri( location.href ).at('query').category;
+
+            var mobileLoad = loading();
 
 
             $.ajax({
@@ -11,7 +13,7 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'component/jquery.ur
                 dataType: 'jsonp',
                 jsonpCallback : 'listConfCallBack',
                 beforeSend : function() {
-                    $.mobile.loading('show');
+                    mobileLoad.show();
                 },
                 success : function( data) {
 
@@ -29,7 +31,7 @@ define(['jquery', 'component/template', './pullDownUpLoad', 'component/jquery.ur
                             dataType: 'jsonp',
                             jsonpCallback : 'newsListsCallBack',
                             success: function( data ){
-                                $.mobile.loading('hide');
+                                mobileLoad.hide();
                                 var newsListsContainer = $('#news-lists-container');
                                 if( data ) {
                                     data = tools.joinAssignSrc( data );

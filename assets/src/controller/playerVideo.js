@@ -3,7 +3,6 @@ define(['jquery', 'component/tools'], function($, tools){
                 var layoutContent = $('.layout-content'),
                     isAndroid = tools.isAndroid,
                     isIos = tools.isIos;
-
             layoutContent.on('tap', 'a', function(e){
                 var $this = $(this),
                     isAppInstall = false,
